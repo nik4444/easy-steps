@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/nav_home"
+        android:enabled="true"
+        android:icon="@drawable/nav_home"
+        android:title="TODO"/>
+
+    <item android:id="@+id/nav_time"
+        android:icon="@drawable/nav_time"
+        android:title="TODO" />
+
+    <item android:id="@+id/nav_gift"
+        android:icon="@drawable/nav_gift"
+        android:title="TODO" />
+
+    <item android:id="@+id/nav_settings"
+        android:icon="@drawable/nav_settings"
+        android:title="TODO" />
+
+</menu>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" >Etapas fáceis</string>
+
+    <string name="text_logo" >Etapas fáceis</string>
+    <string name="text_login">Entrar</string>
+    <string name="text_email">E-mail</string>
+    <string name="text_password">Senha</string>
+    <string name="text_forgot_password">Esqueceu a senha?</string>
+    <string name="text_not_account">Ainda não tem uma conta?</string>
+
+    <string name="text_register" >Registrar-se</string>
+    <string name="text_full_name" >Nome completo</string>
+    <string name="text_gmail" >Gmail</string>
+    <string name="text_phone_number" >Número de telefone</string>
+    <string name="text_already_member" >Já possui conta?</string>
+
+    <string name="text_count_steps" >10 000</string>
+    <string name="text_steps" >Passos</string>
+    <string name="text_total_earn" >1 578</string>
+    <string name="text_coins" >Moedas</string>
+    <string name="text_coins2" >moedas</string>
+    <string name="text_earned_today" >8 ganhou hoje</string>
+    <string name="text_invite_friends">Convidar Amigos</string>
+
+    <string name="text_balance" >Saldo</string>
+    <string name="text_date" >agosto 21,2001</string>
+    <string name="text_new_ad" >Nova !</string>
+    <string name="text_points" >19 500 pontos</string>
+    <string name="text_ad_name" >Negócio semanal - Presentkort H&amp;M</string>
+    <string name="text_few_left" >Poucos sobraram</string>
+    <string name="text_daily_steps" >Seus Passos Diários</string>
+    <string name="text_history_date" >agosto 21,2021</string>
+    <string name="text_steps_count" >20 291</string>
+    <string name="text_km" >km</string>
+
+    <string name="text_blank"></string>
+    <string name="text_daily_reward" >Recompensa Diária</string>
+    <string name="text_bonus">Bônus</string>
+
+    <string name="text_4">4</string>
+    <string name="text_12">12</string>
+    <string name="text_1">1</string>
+    <string name="text_3">3</string>
+    <string name="text_5">5</string>
+    <string name="text_10">10</string>
+
+    <string name="text_1000">1 000</string>
+    <string name="text_3000">3 000</string>
+    <string name="text_9000">9 000</string>
+    <string name="text_14000">14 000</string>
+    <string name="text_20000">20 000</string>
+    <string name="text_0">0</string>
+
+    <string name="text_settings">Configurações</string>
+    <string name="text_profile">Perfil</string>
+    <string name="text_region_language">Região &amp; Idioma</string>
+    <string name="text_learn_easy_steps">Aprenda com o EasySteps</string>
+    <string name="text_contact_us">Fale Conosco</string>
+    <string name="text_rate_app">Avaliar o Aplicativo</string>
+    <string name="text_term_condition">Termos de Uso</string>
+    <string name="text_policy">Política de Privacidade</string>
+    <string name="text_delete_account">Excluir Conta</string>
+    <string name="text_logout">Sair</string>
+
+    <string name="text_name">Nome</string>
+    <string name="text_address">Endereço</string>
+    <string name="text_city">Cidade</string>
+    <string name="text_postcode">Código Postal</string>
+    <string name="text_country">País</string>
+    <string name="text_email_address">Endereço de e-mail</string>
+    <string name="text_save">Salve</string>
+
+    <string name="text_region">Alemanha</string>
+    <string name="text_language">Idioma</string>
+    <string name="text_english">inglês</string>
+
+    <string name="text_delete">Deletar conta</string>
+    <string name="text_delete_info">A exclusão de sua conta também exclui todos os seus dados do app EasySteps.</string>
+    <string name="text_confirm_delete">Confirmar e Excluir</string>
+    <string name="text_cancel_delete">Cancelar e voltar</string>
+
+    <string name="text_cancel">Cancelar</string>
+    <string name="text_new_message">Nova mensagem</string>
+    <string name="text_mail">info@easystepsco.com</string>
+    <string name="text_to">Para :</string>
+    <string name="text_from">Cc / Bcc, De : </string>
+    <string name="text_subject">Sujeita:</string>
+
+    <string name="text_send">Mandar</string>
+    <string name="text_forgot">Esqueceu a sua senha?</string>
+
+    <string name="text_easy_steps">Fácil</string>
+    <string name="text_easy_steps2">Passos</string>
+    <string name="text_easy_steps3">Etapas fáceis</string>
+    <string name="text_home">Casa</string>
+
+    <string name="text_erned_coin_history">20</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="text_deal">Negócio semanal - PrasentKort H&amp;M</string>
+
+
+    <!--Vlidation message-->
+    <string name="text_empty_username">Por favor, insira seu nome</string>
+    <string name="text_empty_email">Por favor, insira o ID do e-mail</string>
+    <string name="text_empty_mobile">Digite o número do celular</string>
+    <string name="text_empty_password">Por favor, digite a senha</string>
+    <string name="text_valid_email">Por favor, insira o formato de ID de e-mail válido</string>
+    <string name="text_valid_password">Um mínimo 8 senha de caracteres contém uma combinação de <b>letra maiúscula e minúscula</b> e <b>número</b> e <b>caractere especial @</b></string>
+    <string name="total">Total</string>
+    <string name="average">Média</string>
+
+    <string name="goal_reached_notification">Meta alcançada! %s passos e contando</string>
+    <string name="notification_text">%s passos para ir</string>
+    <string name="notification_title">Pedômetro está contando</string>
+    <string name="your_progress_will_be_shown_here_soon">Seu progresso será mostrado aqui em breve</string>
+    <string name="steps">Passos</string>
+    <string name="no_sensor">Sensor não encontrado</string>
+    <string name="no_sensor_explain">Este aplicativo requer um sensor de etapa de hardware dedicado - que o seu dispositivo não possui. Este aplicativo não funciona no seu dispositivo.</string>
+    <string name="text_state">Estado</string>
+    <string name="txt_points"> Pontos</string>
+    <string name="text_many_left"> Muitos deixaram</string>
+    <string name="text_step">Passos</string>
+    <string name="text_month">Agosto</string>
+    <string name="text_date_history">14</string>
+    <string name="text_year">2021</string>
+    <string name="priviousdate">encontro privado</string>
+    <string name="text_1578">1 578</string>
+    <string name="text_10000">10 000</string>
+
+
+    <string name="hours">Horas</string>
+    <string name="minutes">Minutos</string>
+    <string name="MILES">MILES</string>
+    <string name="steps_today">Passos</string>
+    <string name="stopped">Parada</string>
+    <string name="goal_step_count">Meta</string>
+    <string name="text_region2">Região</string>
+
+
+    <string name="usa_language">USA</string>
+    <string name="uk_language">UK</string>
+    <string name="brazilian_language">Brasil</string>
+    <string name="argentina_language">Argentina</string>
+    <string name="uae_language">Emirados Árabes</string>
+
+
+    <string name="select_language">Selecione o Idioma</string>
+    <string name="arabic_language">Emirados Árabes</string>
+    <string name="english_language">Inglês</string>
+    <string name="portuguese_language">Português</string>
+    <string name="spanish_language">Espanhol</string>
+
+    <string name="dialog_logout">Encerrar sessão</string>
+    <string name="dialog_logout_message">Tem certeza que deseja sair?</string>
+    <string name="dialog_no">Não</string>
+    <string name="dialog_yes">sim</string>
+
+    <string name="select_region">Selecione a Região</string>
+    <string name="home_distance">Distância</string>
+    <string name="home_today">Hoje</string>
+    <string name="home_balance">Saldo</string>
+    <string name="text_change_password">Alterar Senha</string>
+    <string name="new_password">Nova Senha</string>
+    <string name="current_password">Senha atual</string>
+    <string name="confirm_password">Confirme a Senha</string>
+    <string name="enter_otp">Insira o Código que recebeu em seu telefone</string>
+    <string name="text_resend_otp">Reenviar Código</string>
+    <string name="text_remember_me">Memorizar minhas informações</string>
+    <string name="text_face">Ativar ID de rosto/ID de toque</string>
+</resources>

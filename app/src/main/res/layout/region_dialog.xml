@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/round_corner_region"
+    android:orientation="vertical"
+    android:padding="@dimen/_10ssp">
+
+    <LinearLayout
+        android:id="@+id/ll_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp">
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:fontFamily="@font/bold"
+            android:text="@string/select_region"
+            android:textColor="@color/text_steps"
+            android:textSize="@dimen/_15ssp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"/>
+
+
+    <LinearLayout
+        android:id="@+id/ll_usa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp">
+
+        <ImageView
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:src="@drawable/usa_flag"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:fontFamily="@font/regular"
+            android:text="@string/usa_language"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_uk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp">
+
+        <ImageView
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:src="@drawable/uk_flag"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:fontFamily="@font/regular"
+            android:text="@string/uk_language"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_brazilian"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp">
+
+        <ImageView
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:src="@drawable/brazilian_flag"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:fontFamily="@font/regular"
+            android:text="@string/brazilian_language"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_argentina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp">
+
+        <ImageView
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:src="@drawable/argentina_flag"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:fontFamily="@font/regular"
+            android:text="@string/argentina_language"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_uae"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp">
+
+        <ImageView
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:src="@drawable/uae_flag"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:fontFamily="@font/regular"
+            android:text="@string/uae_language"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

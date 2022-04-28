@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" >خطوات سهلة</string>
+
+    <string name="text_logo" >خطوات سهلة</string>
+    <string name="text_login">تسجيل الدخول</string>
+    <string name="text_email">البريد  الالكتروني</string>
+    <string name="text_password">كلمة المرور</string>
+    <string name="text_forgot_password">نسيت كلمة المرور؟</string>
+    <string name="text_not_account">ليس لديك حساب</string>
+    <string name="text_register" >تسجيل</string>
+    <string name="text_full_name" >الاسم</string>
+    <string name="text_gmail" >بريد جوجل</string>
+    <string name="text_phone_number" >رقم الهاتف</string>
+    <string name="text_already_member" >هل أنت عضو بالفعل؟</string>
+
+    <string name="text_count_steps" >10 000</string>
+    <string name="text_steps" >خطوات</string>
+    <string name="text_total_earn" >1 578</string>
+    <string name="text_coins" >عملات نقدية</string>
+    <string name="text_coins2" >عملات معدنية</string>
+    <string name="text_earned_today" >8 تم اكتسابها اليوم</string>
+    <string name="text_invite_friends">دعوة أصدقاء</string>
+
+    <string name="text_balance" >الرصيد المتوفر</string>
+    <string name="text_date" >أغسطس 21,2001</string>
+    <string name="text_new_ad" >جديد !</string>
+    <string name="text_points" >19 500 نقاط</string>
+    <string name="text_ad_name" >صفقة أسبوعية - Presentkort H&amp;M</string>
+    <string name="text_few_left" >قليل من اليسار</string>
+    <string name="text_daily_steps" >خطواتك اليومية</string>
+    <string name="text_history_date" >أغسطس 21,2021</string>
+    <string name="text_steps_count" >20 291</string>
+    <string name="text_km" >كم</string>
+
+    <string name="text_blank"></string>
+    <string name="text_daily_reward" >المكافأة اليومية</string>
+    <string name="text_bonus">علاوة</string>
+
+    <string name="text_4">4</string>
+    <string name="text_12">12</string>
+    <string name="text_1">1</string>
+    <string name="text_3">3</string>
+    <string name="text_5">5</string>
+    <string name="text_10">10</string>
+
+    <string name="text_1000">1 000</string>
+    <string name="text_3000">3 000</string>
+    <string name="text_9000">9 000</string>
+    <string name="text_14000">14 000</string>
+    <string name="text_20000">20 000</string>
+    <string name="text_0">0</string>
+
+    <string name="text_settings">الإعدادات</string>
+    <string name="text_profile">الملف الشخصي</string>
+    <string name="text_region_language">اللغة والمنطقة</string>
+    <string name="text_learn_easy_steps">تعلم مع EasySteps</string>
+    <string name="text_contact_us">اتصل بنا</string>
+    <string name="text_rate_app">تقييم التطبيق</string>
+    <string name="text_term_condition">شروط الاستخدام</string>
+    <string name="text_policy">السياسة</string>
+    <string name="text_delete_account">حذف الحساب</string>
+    <string name="text_logout">تسجيل خروج</string>
+
+    <string name="text_name">اسم</string>
+    <string name="text_address">العنوان</string>
+    <string name="text_city">المدينة</string>
+    <string name="text_postcode">الرمز البريدي</string>
+    <string name="text_country">البلد</string>
+    <string name="text_email_address">عنوان البريد الالكترونى</string>
+    <string name="text_save">يحفظ</string>
+
+    <string name="text_region">المنطقة</string>
+    <string name="text_language">لغة</string>
+    <string name="text_english">إنجليزي</string>
+
+    <string name="text_delete">حذف الحساب</string>
+    <string name="text_delete_info">سيؤدي حذف حسابك أيضًا الى حذف جميع بيانات EasySteps الخاصة بك. </string>
+    <string name="text_confirm_delete">تأكيد وحذف</string>
+    <string name="text_cancel_delete">إلغاء والعودة</string>
+
+    <string name="text_cancel">إلغاء</string>
+    <string name="text_new_message">رسالة جديدة</string>
+    <string name="text_mail">info@easystepsco.com</string>
+    <string name="text_to">ل :</string>
+    <string name="text_from">نسخة إلى / نسخة مخفية الوجهة ، من : </string>
+    <string name="text_subject">موضوع:</string>
+
+    <string name="text_send">إرسال</string>
+    <string name="text_forgot">هل نسيت كلمة السر</string>
+
+    <string name="text_easy_steps">سهل</string>
+    <string name="text_easy_steps2">خطوات</string>
+    <string name="text_easy_steps3">خطوات سهلة</string>
+    <string name="text_home">مسكن</string>
+
+    <string name="text_erned_coin_history">20</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">مرحبا جزء فارغ</string>
+
+    <string name="text_deal">صفقة أسبوعية - PrasentKort</string>
+
+
+    <!--Vlidation message-->
+    <string name="text_empty_username">من فضلك أدخل إسمك</string>
+    <string name="text_empty_email">الرجاء إدخال البريد الإلكتروني</string>
+    <string name="text_empty_mobile">الرجاء إدخال رقم الهاتف المتحرك</string>
+    <string name="text_empty_password">الرجاء إدخال كلمة المرور</string>
+    <string name="text_valid_email">الرجاء إدخال معرّف بريد إلكتروني بتنسيق صالح</string>
+    <string name="text_valid_password">تحتوي كلمة المرور المكونة من 8 أحرف على الأقل على مجموعة من <b>الأحرف الكبيرة والصغيرة</b> و <b>عدد</b> و <b>حرف خاص @</b></string>
+    <string name="total">مجموع</string>
+    <string name="average">متوسط</string>
+
+    <string name="goal_reached_notification">تم الوصول للهدف! s% خطوات والعد</string>
+    <string name="notification_text">%s خطوات للذهاب</string>
+    <string name="notification_title">عداد الخطى يحسب</string>
+    <string name="your_progress_will_be_shown_here_soon">سيظهر تقدمك هنا قريبا</string>
+    <string name="steps">خطوات</string>
+    <string name="no_sensor">جهاز الاستشعار غير موجود</string>
+    <string name="no_sensor_explain">يتطلب هذا التطبيق مستشعر خطوة للأجهزة مخصصًا - وهو ما لا يحتوي عليه جهازك. لن يتم تشغيل هذا التطبيق على جهازك.</string>
+    <string name="text_state">الولاية</string>
+    <string name="txt_points"> نقاط</string>
+    <string name="text_many_left"> كثير من اليسار</string>
+    <string name="text_step">خطوات</string>
+    <string name="text_month">أغسطس</string>
+    <string name="text_date_history">14</string>
+    <string name="text_year">2021</string>
+    <string name="priviousdate">خاص</string>
+    <string name="text_1578">1 578</string>
+    <string name="text_10000">10 000</string>
+
+
+    <string name="hours">ساعات</string>
+    <string name="minutes">الدقائق</string>
+    <string name="MILES">اميال</string>
+    <string name="steps_today">خطوات اليوم</string>
+    <string name="stopped">توقفت</string>
+    <string name="goal_step_count">المرمى</string>
+    <string name="text_region2">منطقة</string>
+
+
+    <string name="usa_language">الولايات المتحدة الأمريكية</string>
+    <string name="uk_language">المملكة المتحدة</string>
+    <string name="brazilian_language">البرازيل</string>
+    <string name="argentina_language">الأرجنتين</string>
+    <string name="uae_language">الإمارات العربية المتحدة</string>
+
+
+    <string name="select_language">اختر لغة</string>
+    <string name="arabic_language">العربية</string>
+    <string name="english_language">الإنجليزية</string>
+    <string name="portuguese_language">البرتغالية</string>
+    <string name="spanish_language">الأسبانية</string>
+
+    <string name="dialog_logout">تسجيل خروج</string>
+    <string name="dialog_logout_message">هل أنت متأكد أنك تريد تسجيل الخروج؟</string>
+    <string name="dialog_no">رقم</string>
+    <string name="dialog_yes">نعم</string>
+
+
+    <string name="select_region">اختر المنطقة</string>
+    <string name="home_distance">مسافة</string>
+    <string name="home_today">اليوم</string>
+    <string name="home_balance">الرصيد</string>
+    <string name="text_change_password">كلمة المرور الحالية</string>
+    <string name="new_password">كلمة مرور جديدة</string>
+    <string name="current_password">كلمة المرور الحالية</string>
+    <string name="confirm_password">تأكيد كلمة المرور</string>
+    <string name="enter_otp">كلمة مرور لمرة واحدة OTP</string>
+    <string name="text_resend_otp">إعادة إرسال OTP</string>
+
+    <string name="text_remember_me">تذكرني</string>
+
+    <string name="text_face">قم بتمكين Face ID / Touch ID</string>
+</resources>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_2sdp"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/txt_steps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_toRightOf="@+id/img_logo"
+        android:fontFamily="@font/bold"
+        android:text="@string/text_easy_steps3"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_15ssp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_steps"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/img_steps"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:src="@drawable/notification_steps" />
+
+            <TextView
+                android:id="@+id/steps"
+                style="@style/TextAppearance.Compat.Notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="@string/text_1578"
+                android:textColor="@color/black" />
+
+            <TextView
+                style="@style/TextAppearance.Compat.Notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:gravity="center_vertical"
+                android:text="@string/text_steps"
+                android:textColor="@color/black" />
+
+
+        </LinearLayout>
+
+<!--
+        <View
+            android:id="@+id/view1"
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_toRightOf="@+id/steps"
+            android:layout_below="@+id/txt_steps"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:background="#BDBBBB"/>
+-->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/img_km"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_below="@+id/txt_steps"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_toRightOf="@+id/view1"
+                android:src="@drawable/notification_km" />
+
+            <TextView
+                android:id="@+id/txt_km"
+                style="@style/TextAppearance.Compat.Notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:gravity="center_vertical"
+                android:text="@string/text_10"
+                android:textColor="@color/black" />
+
+            <TextView
+                style="@style/TextAppearance.Compat.Notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:gravity="center_vertical"
+                android:text="@string/text_km"
+                android:textColor="@color/black" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>

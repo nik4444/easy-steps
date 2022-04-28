@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "534568157204",
+    "project_id": "easy-steps-342905",
+    "storage_bucket": "easy-steps-342905.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534568157204:android:f1013e41e53583f0bea701",
+        "android_client_info": {
+          "package_name": "com.easysteps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "534568157204-4s70ouvfql5oaucjkjklag16iqt8lked.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.easysteps",
+            "certificate_hash": "1ee638b1a90e0c4c0be7b2911ee53c33cefdede3"
+          }
+        },
+        {
+          "client_id": "534568157204-q7a03ofp5p6m5gkjpu3630ruqrdm5le3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBt7ljMudHD7BfHE938z2C8-tt-808GyYs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "534568157204-q7a03ofp5p6m5gkjpu3630ruqrdm5le3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

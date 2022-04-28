@@ -1,0 +1,119 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    compileSdkVersion 31
+    buildToolsVersion '31.0.0'
+
+    defaultConfig {
+        applicationId "com.easysteps"
+        minSdk 21
+        targetSdkVersion 31
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+
+    implementation 'com.github.bumptech.glide:glide:4.13.0'
+    implementation 'com.airbnb.android:lottie:5.0.3'
+
+    implementation 'com.google.android.gms:play-services-ads:20.4.0'
+    //implementation 'com.facebook.android:audience-network-sdk:6.2.1'
+    implementation 'com.google.ads.mediation:facebook:6.7.0.0'
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    implementation 'com.pixplicity.easyprefs:library:1.9.0'
+    implementation 'androidx.lifecycle:lifecycle-process:2.4.1'
+    implementation "androidx.multidex:multidex:2.0.1"
+    implementation 'androidx.browser:browser:1.4.0'
+
+    implementation 'net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:3.0.0-RC3'
+
+    implementation 'org.apache.commons:commons-lang3:3.9'
+
+
+
+    implementation platform('com.google.firebase:firebase-bom:29.1.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-messaging'
+
+
+//    implementation 'pl.pawelkleczkowski.customgauge:CustomGauge:1.0.4'
+    implementation 'com.github.j4velin.EazeGraph:EazeGraph:1.0.3'
+    implementation 'com.github.j4velin.colorpicker:colorpicker:1.20.6'
+    implementation 'com.google.android.apps.dashclock:dashclock-api:2.0.0'
+
+    // Country and City Picker
+    implementation 'com.vikktorn.picker:picker:1.0.0'
+
+    // Exo PLayer
+
+//    implementation "com.google.android.exoplayer:exoplayer-hls:2.17.1"
+//    implementation "com.google.android.exoplayer:exoplayer-smoothstreaming:2.17.1"
+//    implementation 'com.google.android.exoplayer:exoplayer-core:r1.3.2'
+//    implementation 'com.google.android.exoplayer:exoplayer-dash:r1.3.2'
+//    implementation 'com.google.android.exoplayer:exoplayer-ui:r1.3.2'
+    implementation 'com.google.android.exoplayer:exoplayer:2.7.3'
+
+
+    implementation 'androidx.biometric:biometric:1.1.0'
+
+
+    implementation 'in.unicodelabs.sorbh:kdgaugeview:1.0.0'
+
+    implementation "com.google.android.gms:play-services-fitness:21.0.1"
+    implementation "com.google.android.gms:play-services-auth:20.1.0"
+
+    implementation 'com.github.HotBitmapGG:CreditSesameRingView:V1.0.4'
+
+    // retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
+
+
+    /*RxJava lib*/
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation "io.reactivex.rxjava2:rxjava:2.2.19"
+    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+
+    /* LiveData lib*/
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    implementation "android.arch.lifecycle:runtime:1.1.1"
+    annotationProcessor "android.arch.lifecycle:common-java8:1.1.1"
+
+    /* dagger dependency for DI*/
+
+    implementation "com.google.dagger:dagger:2.28.3"
+    annotationProcessor "com.google.dagger:dagger-compiler:2.27"
+    compileOnly 'javax.annotation:jsr250-api:1.0'
+    implementation 'javax.inject:javax.inject:1'
+
+}

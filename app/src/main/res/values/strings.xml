@@ -1,0 +1,172 @@
+<resources>
+    <string name="app_name">Easy Steps</string>
+
+    <string name="text_logo">Easy Steps</string>
+    <string name="text_login">Login</string>
+    <string name="text_email">Email</string>
+    <string name="text_password">Password</string>
+    <string name="text_forgot_password">Forgot password?</string>
+    <string name="text_not_account">Don\'t have an account?</string>
+    <string name="text_register">Register</string>
+    <string name="text_full_name">Full Name</string>
+    <string name="text_gmail">Gmail</string>
+    <string name="text_phone_number">Phone Number</string>
+    <string name="text_already_member">Already a member?</string>
+
+    <string name="text_count_steps">10 000</string>
+    <string name="text_steps">steps</string>
+    <string name="text_total_earn">1 578</string>
+    <string name="text_coins">Coins</string>
+    <string name="text_coins2">coins</string>
+    <string name="text_earned_today">8 earned today</string>
+    <string name="text_invite_friends">Invite Friends</string>
+
+    <string name="text_balance">Available balance</string>
+    <string name="text_date">August 21,2001</string>
+    <string name="text_new_ad">New !</string>
+    <string name="text_points">19 500 points</string>
+    <string name="text_ad_name">Weekly deal - Presentkort H&amp;M</string>
+    <string name="text_few_left">Few left</string>
+    <string name="text_daily_steps">Your daily steps</string>
+    <string name="text_history_date">August 21,2021</string>
+    <string name="text_steps_count">20 291</string>
+    <string name="text_km">km</string>
+
+    <string name="text_daily_reward">Daily Reward</string>
+    <string name="text_bonus">Bonus</string>
+
+    <string name="text_4">4</string>
+    <string name="text_12">12</string>
+    <string name="text_1">1</string>
+    <string name="text_3">3</string>
+    <string name="text_5">5</string>
+    <string name="text_10">10</string>
+
+    <string name="text_1000">1 000</string>
+    <string name="text_3000">3 000</string>
+    <string name="text_9000">9 000</string>
+    <string name="text_14000">14 000</string>
+    <string name="text_20000">20 000</string>
+    <string name="text_0">0</string>
+
+    <string name="text_settings">Settings</string>
+    <string name="text_profile">Profile</string>
+    <string name="text_region_language">Region &amp; Language</string>
+    <string name="text_learn_easy_steps">Learn with EasySteps</string>
+    <string name="text_contact_us">Contact Us</string>
+    <string name="text_rate_app">Rate the App</string>
+    <string name="text_term_condition">Terms of Use</string>
+    <string name="text_policy">Policy</string>
+    <string name="text_delete_account">Delete account</string>
+    <string name="text_logout">Log  out</string>
+
+    <string name="text_name">Name</string>
+    <string name="text_address">Address</string>
+    <string name="text_city">City</string>
+    <string name="text_postcode">Post Code</string>
+    <string name="text_country">Country</string>
+    <string name="text_email_address">Email address</string>
+    <string name="text_save">Save</string>
+
+    <string name="text_region">Germany</string>
+    <string name="text_language">Language</string>
+    <string name="text_english">English</string>
+
+    <string name="text_delete">Delete Account</string>
+    <string name="text_delete_info">Deleting your account will also \n delete all your EasySteps data.</string>
+    <string name="text_confirm_delete">Confirm and Delete</string>
+    <string name="text_cancel_delete">Cancel and go back</string>
+
+    <string name="text_cancel">Cancel</string>
+    <string name="text_new_message">New Message</string>
+    <string name="text_mail">info@easystepsco.com</string>
+    <string name="text_to">To :</string>
+    <string name="text_from">Cc/Bcc, From : </string>
+    <string name="text_subject">Subject:</string>
+
+    <string name="text_send">Send</string>
+    <string name="text_forgot">Forgot Password</string>
+
+    <string name="text_easy_steps">Easy</string>
+    <string name="text_easy_steps2">Steps</string>
+    <string name="text_easy_steps3">Easy Steps</string>
+    <string name="text_home">Home</string>
+
+    <string name="text_erned_coin_history">20</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="text_deal">Weekly deal - PrasentKort H&amp;M</string>
+
+
+    <!--Vlidation message-->
+    <string name="text_empty_username">Please Enter Your Name</string>
+    <string name="text_empty_email">Please Enter Email Id</string>
+    <string name="text_empty_mobile">Please Enter Mobile Number</string>
+    <string name="text_empty_password">Please Enter Password</string>
+    <string name="text_valid_email">Please Enter Valid Format Email Id</string>
+    <string name="text_valid_password">A minimum 8 characters password contains a combination of <b>uppercase and lowercase letter</b> and <b>number</b> and <b>special character @</b></string>
+    <string name="total">Total</string>
+    <string name="average">Average</string>
+
+    <string name="goal_reached_notification">Goal reached! %s steps and counting</string>
+    <string name="notification_text">%s steps to go</string>
+    <string name="notification_title">Pedometer is counting</string>
+    <string name="your_progress_will_be_shown_here_soon">Your progress will be shown here soon</string>
+    <string name="steps">Steps</string>
+    <string name="no_sensor">Sensor not found</string>
+    <string name="no_sensor_explain">This app requires a dedicated hardware step sensor - which your device does not have. This app won\'t run on your device.</string>
+    <string name="text_state">State</string>
+    <string name="txt_points"> Points</string>
+    <string name="text_many_left"> Many Left</string>
+    <string name="text_step">Steps</string>
+    <string name="text_month">Aug</string>
+    <string name="text_date_history">14</string>
+    <string name="text_year">2021</string>
+    <string name="priviousdate">priviousdate</string>
+    <string name="text_1578">1 578</string>
+    <string name="text_10000">10 000</string>
+
+
+    <string name="hours">Hours</string>
+    <string name="minutes">Minutes</string>
+    <string name="MILES">MILES</string>
+    <string name="steps_today">Steps today</string>
+    <string name="stopped">Stopped</string>
+    <string name="goal_step_count">Goal</string>
+    <string name="text_region2">Region</string>
+
+
+    <string name="usa_language">USA</string>
+    <string name="uk_language">UK</string>
+    <string name="brazilian_language">Brazil</string>
+    <string name="argentina_language">Argentina</string>
+    <string name="uae_language">United Arab Emirates</string>
+
+
+    <string name="select_language">Select Languages</string>
+    <string name="arabic_language">Arabic</string>
+    <string name="english_language">English</string>
+    <string name="portuguese_language">Portuguese</string>
+    <string name="spanish_language">Spanish</string>
+
+    <string name="dialog_logout">Logout</string>
+    <string name="dialog_logout_message">Are you sure you want to logout?</string>
+    <string name="dialog_no">No</string>
+    <string name="dialog_yes">Yes</string>
+
+    <string name="select_region">Select Region</string>
+    <string name="home_distance">Distance</string>
+    <string name="home_today">Today</string>
+    <string name="home_balance">Balance</string>
+    <string name="text_change_password">Change Password</string>
+    <string name="new_password">New Password</string>
+    <string name="current_password">Current Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="enter_otp">Enter Otp</string>
+    <string name="text_resend_otp">Resend OTP</string>
+
+    <string name="text_remember_me">Remember me</string>
+    <string name="text_face">Enable Face Id / Touch ID</string>
+</resources>

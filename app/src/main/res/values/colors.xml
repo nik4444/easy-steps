@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#3c5478</color>
+    <color name="purple_700">#3c5478</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="main_background">#f4f4f4</color>
+    
+    <color name="text_easy">#a1b870</color>
+    <color name="text_steps">#1D3561</color>
+    <color name="text_login">#eae8e9</color>
+    <color name="text_color">#8E8E8E</color>
+    <color name="main_half">#D1CFCF</color>
+    <color name="button_color">#254A7F</color>
+    <color name="text_light">#b6b6b6</color>
+    <color name="text_register">#667f97</color>
+    <color name="icon_tint">#7f7f7f</color>
+    <color name="text_available">#719d88</color>
+    <color name="text_count_coins">#ffffff</color>
+
+    <color name="app_corner_1">#30708C</color>
+    <color name="app_corner_2">#2184B8</color>
+    <color name="app_corner_3">#247D95</color>
+    <color name="app_corner_4">#062538</color>
+    <color name="app_corner_5">#657932</color>
+    <color name="app_corner_6">#96B148</color>
+    <color name="app_corner_7">#8E8E8E</color>
+
+    <color name="text_points">#e3986a</color>
+    
+    <color name="bottom_navigation">#254a7f</color>
+    
+    <color name="delete_dialog">#1f3d6f</color>
+    <color name="delete_text_info">#526990</color>
+    <color name="delete_confirm">#e34b3d</color>
+    <color name="delete_cancel">#244172</color>
+    
+    <color name="selected_reward">#218fc4</color>
+    <color name="unselected_reward">#fdfdfb</color>
+    <color name="text_selected_reward">#305369</color>
+    <color name="text_unselected_reward">#b3b3b3</color>
+    
+    <color name="text_profile">#3e4c68</color>
+    <color name="text_label">#677288</color>
+    <color name="text_save">#8db24b</color>
+
+    <color name="send_email">#6b9ef8</color>
+    <color name="from_email">#adadb0</color>
+    
+    <color name="text_region_label">#5e6a81</color>
+    <color name="text_country">#384865</color>
+    <color name="text_language">#505d76</color>
+    
+    <color name="settings_text">#3a4965</color>
+    <color name="icon_next_tint">#667188</color>
+    
+    <color name="text_total_count">#8ab046</color>
+    <color name="text_main_steps">#365683</color>
+    
+    <color name="daily_steps">#1f3e6f</color>
+    <color name="background_date">#1f3e6f</color>
+    <color name="steps">#6c7c95</color>
+    <color name="coins">#a8c370</color>
+
+    <color name="text_ads_new">#D25849</color>
+
+
+    <color name="progress1">#297ba8</color>
+    <color name="progress2">#458990</color>
+    <color name="progress3">#58937f</color>
+    <color name="progress4">#7aa462</color>
+    <color name="progress5">#97b34a</color>
+
+    <color name="bg_many_left">#80000000</color>
+    <color name="color_transparent">#00000000</color>
+    <color name="color_video_transparent">#88000000</color>
+
+    <color name="text_settings">#303D56</color>
+    <color name="nav_icon"></color>
+
+
+    <color name="home_screen_icon">#ffffff</color>
+    <color name="text_date_deal">#D1C3F2</color>
+    <color name="home_distance_count">#78a73b</color>
+
+    <!--<array name="arc_colors_default">
+        <item>#277AA9</item>
+        <item>#8BC34A</item>
+        <item>#277AA9</item>
+    </array>-->
+
+    <array name="arc_colors_default">
+        <item>#e6e6e6</item>
+        <item>#e6e6e6</item>
+        <item>#e6e6e6</item>
+    </array>
+
+</resources>
