@@ -11,6 +11,7 @@ import retrofit2.http.POST;
 
 /**
  * Created by NIKUNJ
+ *
  */
 public interface ApiCallInterface {
 
