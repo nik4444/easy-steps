@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.easysteps.LoginActivity;
 import com.easysteps.R;
 import com.easysteps.helper.Utils;
 import com.easysteps.model.loginsignup.OtpRes;
@@ -49,13 +50,12 @@ public class OtpActivity extends AppCompatActivity {
         txt_send = (TextView) findViewById(R.id.txt_send);
 
 
-
         txt_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (edt_new_password.getText().toString().trim().equals(edt_confirm_password.getText().toString().trim())){
-                RestPassword();
-                }else {
+                if (edt_new_password.getText().toString().trim().equals(edt_confirm_password.getText().toString().trim())) {
+                    RestPassword();
+                } else {
                     Toast.makeText(OtpActivity.this, "Please Enter Valid Password!", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -74,8 +74,8 @@ public class OtpActivity extends AppCompatActivity {
 
             Call call = AsyncHttpRequest.newRequestPost(this, body.build(), URLs.RESET_PASSWORD());
             call.enqueue(new RestPasswordHandler(this));
-        }catch (Exception e){
-            Log.e("TAG", "ForgotPassword: "+e.getMessage() );
+        } catch (Exception e) {
+            Log.e("TAG", "ForgotPassword: " + e.getMessage());
         }
 
     }
@@ -99,10 +99,10 @@ public class OtpActivity extends AppCompatActivity {
                 if (responce != null && responce.length() > 0) {
                     OtpRes otpRes = new Gson().fromJson(responce, new TypeToken<OtpRes>() {
                     }.getType());
-                    if (otpRes.getStatus()==1){
-                        startActivity(new Intent(OtpActivity.this,LoginActivity.class));
+                    if (otpRes.getStatus() == 1) {
+                        startActivity(new Intent(OtpActivity.this, LoginActivity.class));
                         finish();
-                    }else {
+                    } else {
 //                        Utils.MyShortToast(OtpActivity.this,otpRes.getMessage());
                     }
                 }
@@ -120,7 +120,7 @@ public class OtpActivity extends AppCompatActivity {
 
         @Override
         public void onFailure(Throwable e, String content) {
-            Log.e("TAG", "onFailure: "+ e.getMessage() );
+            Log.e("TAG", "onFailure: " + e.getMessage());
             Utils.HideProgressDialog(OtpActivity.this);
         }
     }

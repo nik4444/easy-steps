@@ -15,14 +15,6 @@ public class BaseActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
     }
 
-    protected void showLoader() {
-        Utils.ShowProgressDialog(this);
-    }
-
-    protected void hideLoader() {
-        Utils.HideProgressDialog(this);
-    }
-
     public BaseActivity getActivity() {
         return this;
     }

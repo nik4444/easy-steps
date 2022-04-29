@@ -127,7 +127,7 @@ public class Utils {
         try {
             Snackbar snackbar = Snackbar.make(layout, message.toString(), Snackbar.LENGTH_LONG);
             View snackbarView = snackbar.getView();
-            TextView textView = (TextView) snackbarView.findViewById(R.id.snackbar_text);
+            TextView textView = snackbarView.findViewById(R.id.snackbar_text);
             textView.setMaxLines(5);
             snackbar.show();
         } catch (Exception e) {

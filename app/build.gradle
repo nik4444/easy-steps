@@ -1,11 +1,16 @@
 plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
+    id 'kotlin-android'
 }
 
 android {
     compileSdkVersion 31
     buildToolsVersion '31.0.0'
+
+    buildFeatures {
+        dataBinding = true
+    }
 
     defaultConfig {
         applicationId "com.easysteps"
@@ -38,6 +43,7 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    implementation 'com.android.support:multidex:1.0.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
 
@@ -57,7 +63,6 @@ dependencies {
     implementation 'net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:3.0.0-RC3'
 
     implementation 'org.apache.commons:commons-lang3:3.9'
-
 
 
     implementation platform('com.google.firebase:firebase-bom:29.1.0')
@@ -93,10 +98,12 @@ dependencies {
 
     implementation 'com.github.HotBitmapGG:CreditSesameRingView:V1.0.4'
 
-    // retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    //Networking
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2'
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
 
     /*RxJava lib*/
@@ -108,12 +115,17 @@ dependencies {
     implementation "android.arch.lifecycle:extensions:1.1.1"
     implementation "android.arch.lifecycle:runtime:1.1.1"
     annotationProcessor "android.arch.lifecycle:common-java8:1.1.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
+    implementation "android.arch.lifecycle:extensions:1.1.1"
 
-    /* dagger dependency for DI*/
+    implementation "androidx.activity:activity-ktx:1.4.0"
+    implementation "androidx.fragment:fragment-ktx:1.4.1"
 
-    implementation "com.google.dagger:dagger:2.28.3"
-    annotationProcessor "com.google.dagger:dagger-compiler:2.27"
-    compileOnly 'javax.annotation:jsr250-api:1.0'
-    implementation 'javax.inject:javax.inject:1'
+    //Coroutine
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0'
+
+    //Timber App Logging
+    implementation 'com.jakewharton.timber:timber:5.0.1'
 
 }

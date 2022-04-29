@@ -1,0 +1,15 @@
+package com.easysteps.modelClases
+
+enum class ResponseCode constructor(val code: Int) {
+    OK(200),
+    BadRequest(400),
+    Unauthenticated(401),
+    Unauthorized(403),
+    NotFound(404),
+    RequestTimeOut(408),
+    Conflict(409),
+    InvalidData(422),
+    Blocked(423),
+    ForceUpdate(426),
+    InternalServerError(500)
+}

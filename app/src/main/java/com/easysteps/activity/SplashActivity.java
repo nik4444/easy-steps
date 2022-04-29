@@ -7,6 +7,7 @@ import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.easysteps.LoginActivity;
 import com.easysteps.R;
 
 public class SplashActivity extends AppCompatActivity {

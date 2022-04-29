@@ -27,8 +27,8 @@ import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.easysteps.LoginActivity;
 import com.easysteps.R;
-import com.easysteps.activity.LoginActivity;
 import com.easysteps.activity.RegisterActivity;
 import com.easysteps.helper.PrefKey;
 import com.easysteps.helper.Utils;
@@ -139,7 +139,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
         ll_change_password = view.findViewById(R.id.ll_change_password);
         face_switch = view.findViewById(R.id.face_switch);
 
-        isFaceLocked = getSwitchValue(getActivity(),IS_FACE_LOCK);
+        isFaceLocked = getSwitchValue(getActivity(), IS_FACE_LOCK);
 
         face_switch.setChecked(isFaceLocked);
 
@@ -160,10 +160,10 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
         ll_delete_account.setOnClickListener(this);
 
         face_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isFaceLocked){
-               setSwitchValue(getActivity(),IS_FACE_LOCK,isChecked);
-            }else {
-                setSwitchValue(getActivity(),IS_FACE_LOCK,isChecked);
+            if (isFaceLocked) {
+                setSwitchValue(getActivity(), IS_FACE_LOCK, isChecked);
+            } else {
+                setSwitchValue(getActivity(), IS_FACE_LOCK, isChecked);
             }
         });
     }
@@ -184,11 +184,11 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
             case R.id.ll_learn_easy_steps:
                 break;
             case R.id.ll_contact_us:
-                try{
-                    Intent intent = new Intent (Intent.ACTION_VIEW , Uri.parse("mailto:" + getActivity().getString(R.string.text_mail)));
+                try {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + getActivity().getString(R.string.text_mail)));
                     startActivity(intent);
-                }catch(ActivityNotFoundException e){
-                    Log.e("TAG", "Error: "+e.getMessage() );
+                } catch (ActivityNotFoundException e) {
+                    Log.e("TAG", "Error: " + e.getMessage());
                 }
                 break;
             case R.id.ll_term_condition:
@@ -221,7 +221,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
                                         googleSignInClient.signOut();
                                     })
                                     .addOnFailureListener(e -> {
-                                        Log.e("TAG", "Not Disconnect: "+e.getMessage() );
+                                        Log.e("TAG", "Not Disconnect: " + e.getMessage());
                                     });
 
                             GoogleSignInOptions gso = new GoogleSignInOptions.
@@ -230,7 +230,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
                             GoogleSignInClient googleSignInClient = GoogleSignIn.getClient(getActivity(), gso);
                             googleSignInClient.signOut();
                             ClearEmail(getActivity());
-                            setRememberValue(getActivity(),IS_REMEMBER,false);
+                            setRememberValue(getActivity(), IS_REMEMBER, false);
                             Prefs.remove(PrefKey.register_name);
                             Prefs.remove(PrefKey.address);
                             Prefs.remove(PrefKey.country);
@@ -244,11 +244,11 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.ll_rate_app:
                 try {
-                    Uri uri = Uri.parse("market://details?id="+getActivity().getPackageName()+"");
+                    Uri uri = Uri.parse("market://details?id=" + getActivity().getPackageName() + "");
                     Intent goMarket = new Intent(Intent.ACTION_VIEW, uri);
                     startActivity(goMarket);
-                }catch (ActivityNotFoundException e){
-                    Uri uri = Uri.parse("https://play.google.com/store/apps/details?id="+getActivity().getPackageName()+"");
+                } catch (ActivityNotFoundException e) {
+                    Uri uri = Uri.parse("https://play.google.com/store/apps/details?id=" + getActivity().getPackageName() + "");
                     Intent goMarket = new Intent(Intent.ACTION_VIEW, uri);
                     startActivity(goMarket);
                 }
@@ -273,7 +273,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
                                 googleSignInClient.signOut();
                             })
                             .addOnFailureListener(e -> {
-                                Log.e("TAG", "Not Disconnect: "+e.getMessage() );
+                                Log.e("TAG", "Not Disconnect: " + e.getMessage());
                             });
 
                     GoogleSignInOptions gso = new GoogleSignInOptions.
@@ -282,7 +282,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
                     GoogleSignInClient googleSignInClient = GoogleSignIn.getClient(getActivity(), gso);
                     googleSignInClient.signOut();
                     ClearEmail(getActivity());
-                    setRememberValue(getActivity(),IS_REMEMBER,false);
+                    setRememberValue(getActivity(), IS_REMEMBER, false);
                     Prefs.remove(PrefKey.register_name);
                     Prefs.remove(PrefKey.address);
                     Prefs.remove(PrefKey.country);
@@ -364,7 +364,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
                     if (logOutRes.getStatus() == 1) {
                         Prefs.remove(PrefKey.userToken);
                         Prefs.remove(PrefKey.is_login);
-                        setSwitchValue(getActivity(),IS_FACE_LOCK,false);
+                        setSwitchValue(getActivity(), IS_FACE_LOCK, false);
 //                        Utils.MyShortToast(getActivity(), logOutRes.getMessage());
                         startActivity(new Intent(getActivity(), LoginActivity.class));
                         getActivity().finish();

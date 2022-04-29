@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.easysteps.LoginActivity;
 import com.easysteps.R;
 import com.easysteps.helper.BaseActivity;
 import com.easysteps.helper.PrefKey;
@@ -55,27 +56,27 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.txt_register:
                 if (edt_full_name.getText().toString().isEmpty()) {
-                    Utils.MyShortSnackbar(ll_register,getActivity().getResources().getString(R.string.text_empty_username));
+                    Utils.MyShortSnackbar(ll_register, getActivity().getResources().getString(R.string.text_empty_username));
                 } else if (edt_email.getText().toString().isEmpty()) {
-                    Utils.MyShortSnackbar(ll_register,getActivity().getResources().getString(R.string.text_empty_email));
+                    Utils.MyShortSnackbar(ll_register, getActivity().getResources().getString(R.string.text_empty_email));
                 } else if (edt_phone.getText().toString().isEmpty()) {
-                    Utils.MyShortSnackbar(ll_register,getActivity().getResources().getString(R.string.text_empty_mobile));
+                    Utils.MyShortSnackbar(ll_register, getActivity().getResources().getString(R.string.text_empty_mobile));
                 } else if (edt_password.getText().toString().isEmpty()) {
-                    Utils.MyShortSnackbar(ll_register,getActivity().getResources().getString(R.string.text_empty_password));
+                    Utils.MyShortSnackbar(ll_register, getActivity().getResources().getString(R.string.text_empty_password));
                 } else if (!Utils.isValidEmail(edt_email.getText().toString().trim())) {
                     Utils.MyShortSnackbar(ll_register, getActivity().getResources().getString(R.string.text_valid_email));
                 } else if (!Utils.isValidPassword(edt_password.getText().toString().trim())) {
                     Utils.MyShortSnackbar(ll_register, getActivity().getResources().getString(R.string.text_valid_password));
-                } else{
-                    Prefs.putString(PrefKey.register_name,edt_full_name.getText().toString());
+                } else {
+                    Prefs.putString(PrefKey.register_name, edt_full_name.getText().toString());
                     SignUp();
                 }
                 break;
             case R.id.ll_login:
-                startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                 finish();
                 break;
         }
@@ -92,22 +93,23 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             body.addFormDataPart(RequestParamsUtils.userPassword, edt_password.getText().toString().trim());
 
             body.addFormDataPart(RequestParamsUtils.userLatitude, "21.132564");
-            body.addFormDataPart(RequestParamsUtils.userLongitude,"12.123456");
+            body.addFormDataPart(RequestParamsUtils.userLongitude, "12.123456");
 
 
-            body.addFormDataPart(RequestParamsUtils.userDeviceToken,Prefs.getString(PrefKey.token,"testToken"));
+            body.addFormDataPart(RequestParamsUtils.userDeviceToken, Prefs.getString(PrefKey.token, "testToken"));
             body.addFormDataPart(RequestParamsUtils.userDevice, "1");
-            body.addFormDataPart(RequestParamsUtils.userDeviceId,  Utils.getDeviceId(getActivity()));
+            body.addFormDataPart(RequestParamsUtils.userDeviceId, Utils.getDeviceId(getActivity()));
 
             Call call = AsyncHttpRequest.newRequestPost(getActivity(), body.build(), URLs.REGISTER());
             call.enqueue(new singUpHandler(getActivity()));
 
-        }catch (Exception e){
-             Utils.MyShortToast(getActivity(),e.getMessage());
+        } catch (Exception e) {
+            Utils.MyShortToast(getActivity(), e.getMessage());
         }
 
     }
-//    APi Call Handle
+
+    //    APi Call Handle
     private class singUpHandler extends AsyncResponseHandler {
         singUpHandler(Activity activity) {
             super(activity);
@@ -127,14 +129,14 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                 if (responce != null && responce.length() > 0) {
                     SignUpRes signUpRes = new Gson().fromJson(responce, new TypeToken<SignUpRes>() {
                     }.getType());
-                    if (signUpRes.getStatus()==1){
+                    if (signUpRes.getStatus() == 1) {
                         Prefs.putString(PrefKey.login_info, new Gson().toJson(signUpRes.getSignUpData()));
                         Utils.setLoginStatus(true);
                         Utils.setUserToken(signUpRes.getSignUpData().getUserToken());
-                        startActivity(new Intent(getActivity(),MainActivity.class));
+                        startActivity(new Intent(getActivity(), MainActivity.class));
                         finishAffinity();
-                    }else {
-                        Utils.MyShortSnackbar(ll_register,""+signUpRes.getMessage());
+                    } else {
+                        Utils.MyShortSnackbar(ll_register, "" + signUpRes.getMessage());
 //                        Utils.MyShortToast(getActivity(),signUpRes.getMessage());
                     }
                 }

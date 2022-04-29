@@ -9,15 +9,11 @@ import android.os.Build;
 import android.webkit.WebView;
 
 import com.easysteps.helper.PrefKey;
-import com.easysteps.helper.UtilsModule;
-import com.easysteps.network.AppComponent;
-import com.easysteps.network.AppModule;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.pixplicity.easyprefs.library.Prefs;
 
 public class MyApplication extends Application {
     private static final String PROCESS = "com.easysteps";
-    AppComponent appComponent;
 
     public static Context getContext() {
         return getContext();
@@ -49,18 +45,11 @@ public class MyApplication extends Application {
 
                     PrefKey.token = token;
                 });
-
-        appComponent = DaggerAppComponent.builder().appModule(new AppModule(this)).utilsModule(new UtilsModule()).build();
-
     }
 
     @Override
     protected void attachBaseContext(Context context) {
         super.attachBaseContext(context);
-    }
-
-    public AppComponent getAppComponent() {
-        return appComponent;
     }
 
     private void initPieWebView() {
