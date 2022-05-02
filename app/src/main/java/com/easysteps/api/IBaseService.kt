@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit
 interface IBaseService {
     companion object {
         const val Accept = "Accept"
+        const val Authorization = "Authorization"
         private const val TIME_OUT = 120L
 
         fun getOkHttpClient(): OkHttpClient {

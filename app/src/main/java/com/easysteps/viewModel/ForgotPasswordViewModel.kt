@@ -6,27 +6,26 @@ import androidx.lifecycle.viewModelScope
 import com.easysteps.base.BaseViewModel
 import com.easysteps.base.SingleLiveEvent
 import com.easysteps.viewModel.models.BaseResponse
-import com.easysteps.viewModel.models.SignupData
 import kotlinx.coroutines.launch
 
 /**
  * Created by NIKUNJ on 29-04-2022.
  */
-class LoginViewModel : BaseViewModel() {
+class ForgotPasswordViewModel : BaseViewModel() {
 
-    private val _loginData = SingleLiveEvent<BaseResponse<SignupData>>()
-    val loginData: LiveData<BaseResponse<SignupData>> = _loginData
+    private val _rememberPassData = SingleLiveEvent<BaseResponse<Any>>()
+    val rememberPasswordData: LiveData<BaseResponse<Any>> = _rememberPassData
 
-    private val _loginError = MutableLiveData<Throwable>()
-    val dataError: LiveData<Throwable> = _loginError
+    private val _rememberError = MutableLiveData<Throwable>()
+    val dataError: LiveData<Throwable> = _rememberError
 
     fun callApi(map: HashMap<String, Any>) {
         viewModelScope.launch {
             displayLoader()
-            processDataEvent(api1Repository.login(map), onError = {
-                _loginError.postValue(it)
+            processDataEvent(api1Repository.forgotPassword(map), onError = {
+                _rememberError.postValue(it)
             }) {
-                _loginData.postValue(it)
+                _rememberPassData.postValue(it)
             }
         }
     }

@@ -4,10 +4,10 @@ package com.easysteps.viewModel.models
  * Created by NIKUNJ on 29-04-2022.
  */
 
-data class Login(
-    val status: Int? = null,
-    val message: String? = null,
-    val data: SignupData
+data class BaseResponse<out T>(
+    var status: Int,
+    val message: String = "",
+    val data: T? = null
 )
 
 data class SignupData(

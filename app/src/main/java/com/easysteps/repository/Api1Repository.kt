@@ -6,6 +6,7 @@ import com.easysteps.api.IApiService1
 class Api1Repository(private val apiService: IApiService1) : BaseRepository() {
 
     suspend fun login(map: HashMap<String, Any>) = callApi { apiService.login(map) }
+    suspend fun forgotPassword(map: HashMap<String, Any>) = callApi { apiService.forgotPasswordPassword(map) }
 
     companion object {
         @Volatile

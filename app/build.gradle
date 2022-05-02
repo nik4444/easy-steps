@@ -128,4 +128,8 @@ dependencies {
     //Timber App Logging
     implementation 'com.jakewharton.timber:timber:5.0.1'
 
+    // Shared Preferences
+    implementation 'com.chibatching.kotpref:kotpref:2.10.0'
+    implementation 'com.chibatching.kotpref:gson-support:2.10.0'
+
 }

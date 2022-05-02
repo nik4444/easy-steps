@@ -7,3 +7,4 @@ package com.easysteps.helper
 const val IMAGE_URL = "http://46.101.95.217/easysteps/"
 const val BASE_URL = "http://46.101.95.217/easysteps/api/"
 const val LOGIN = "signIn"
+const val FORGOT_PASSWORD = "ForgotPassword"

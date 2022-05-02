@@ -9,6 +9,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.provider.Settings;
+import android.util.Patterns;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -32,6 +33,11 @@ public class Utils {
 
     public static AlertDialog.Builder dialogBuilder;
     public static AlertDialog pd;
+
+    public static boolean validEmail(String email) {
+        Pattern pattern = Patterns.EMAIL_ADDRESS;
+        return pattern.matcher(email).matches();
+    }
 
     public static boolean checkInternetConnection(Context context) {
         ConnectivityManager connectivity = (ConnectivityManager) context
@@ -125,7 +131,7 @@ public class Utils {
 
     public static void MyShortSnackbar(LinearLayout layout, String message) {
         try {
-            Snackbar snackbar = Snackbar.make(layout, message.toString(), Snackbar.LENGTH_LONG);
+            Snackbar snackbar = Snackbar.make(layout, message, Snackbar.LENGTH_LONG);
             View snackbarView = snackbar.getView();
             TextView textView = snackbarView.findViewById(R.id.snackbar_text);
             textView.setMaxLines(5);
