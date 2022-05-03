@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.easysteps.LoginActivity;
 import com.easysteps.R;
+import com.easysteps.pref.SharedPref;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -19,7 +20,9 @@ public class SplashActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         new Handler().postDelayed(() -> {
-            startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+            if (SharedPref.INSTANCE.isLogin()) {
+                startActivity(new Intent(SplashActivity.this, MainActivity.class));
+            } else startActivity(new Intent(SplashActivity.this, LoginActivity.class));
             finish();
         }, 2000);
     }

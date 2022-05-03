@@ -4,6 +4,7 @@ import com.easysteps.api.IBaseService.Companion.getOkHttpClient
 import com.easysteps.helper.BASE_URL
 import com.easysteps.helper.FORGOT_PASSWORD
 import com.easysteps.helper.LOGIN
+import com.easysteps.helper.REGISTER
 import com.easysteps.viewModel.models.BaseResponse
 import com.easysteps.viewModel.models.SignupData
 import com.google.gson.GsonBuilder
@@ -21,6 +22,12 @@ interface IApiService1 : IBaseService {
 
     @POST(FORGOT_PASSWORD)
     suspend fun forgotPasswordPassword(@Body body: HashMap<String, Any>): Response<BaseResponse<Any>>
+
+    @POST(FORGOT_PASSWORD)
+    suspend fun verifyOtp(@Body body: HashMap<String, Any>): Response<BaseResponse<Any>>
+
+    @POST(REGISTER)
+    suspend fun register(@Body body: HashMap<String, Any>): Response<BaseResponse<SignupData>>
 
     companion object {
         fun getService(): IApiService1 {

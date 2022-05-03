@@ -6,11 +6,12 @@ import com.easysteps.viewModel.models.SignupData
 
 object SharedPref : KotprefModel() {
 
-    var authToken by stringPref()
+    var authToken by stringPref("testToken")
 
-    var fcmToken by stringPref("")
+    var language by stringPref("en")
     var rememberEmail by stringPref("")
     var rememberPassword by stringPref("")
+    var registerName by stringPref("")
 
     var isLogin by booleanPref()
     var isRemember by booleanPref(false)

@@ -52,7 +52,7 @@ public class MainActivity extends BaseActivity {
     boolean account_first_time = false;
     private FitnessOptions fitnessOptions;
     private GoogleSignInAccount account;
-    private int GOOGLE_FIT_PERMISSION_REQUEST_CODE = 1;
+    private final int GOOGLE_FIT_PERMISSION_REQUEST_CODE = 1;
     private int myLiveSteps;
     private LinearLayout ll_google_sign_in;
 
@@ -78,8 +78,8 @@ public class MainActivity extends BaseActivity {
         ChangeLanguage(getLanguage(this, PREFS_SORT_LANGUAGE_NAME));
         loadFragment(new HomeFragment());
 
-        bottom_navigation = findViewById(R.id.bottom_navigation);
-        card_navigation = findViewById(R.id.card_navigation);
+        bottom_navigation = findViewById(R.id.bottomNavigation);
+        card_navigation = findViewById(R.id.cvNavigation);
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACTIVITY_RECOGNITION)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -132,7 +132,7 @@ public class MainActivity extends BaseActivity {
         Fragment fragmentTemp = mFragmentManager.findFragmentByTag(tagFragmentName);
         if (fragmentTemp == null) {
             fragmentTemp = fragment;
-            fragmentTransaction.replace(R.id.frame_container, fragmentTemp, tagFragmentName);
+            fragmentTransaction.replace(R.id.frameContainer, fragmentTemp, tagFragmentName);
         } else {
             fragmentTransaction.show(fragmentTemp);
         }
@@ -156,7 +156,7 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
             case 0:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -165,11 +165,12 @@ public class MainActivity extends BaseActivity {
                 }
                 break;
         }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     public void loadFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_container, fragment);
+        transaction.replace(R.id.frameContainer, fragment);
         transaction.commit();
     }
 

@@ -8,6 +8,7 @@ import androidx.activity.viewModels
 import com.easysteps.R
 import com.easysteps.base.BaseActivity
 import com.easysteps.databinding.ActivityForgotPasswordBinding
+import com.easysteps.helper.EXTRA_EMAIL
 import com.easysteps.helper.Utils
 import com.easysteps.retrofit.RequestParamsUtils
 import com.easysteps.viewModel.ForgotPasswordViewModel
@@ -40,7 +41,7 @@ class ForgotPasswordActivity : BaseActivity<ActivityForgotPasswordBinding>(R.lay
         viewModel.rememberPasswordData.observe(this) {
             if (it.status == 1) {
                 val intent = Intent(this@ForgotPasswordActivity, OtpActivity::class.java)
-                intent.putExtra("email", binding.etEmail.text.toString().trim())
+                intent.putExtra(EXTRA_EMAIL, binding.etEmail.text.toString().trim())
                 startActivity(intent)
             } else Utils.MyShortSnackbar(binding.llForgot, it.message)
         }
@@ -50,7 +51,7 @@ class ForgotPasswordActivity : BaseActivity<ActivityForgotPasswordBinding>(R.lay
         when (p0?.id) {
             R.id.tvSend -> {
                 if (!Utils.validEmail(binding.etEmail.text.toString().trim())) {
-                    Toast.makeText(this, "Enter valid e-mail!", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Enter valid email!", Toast.LENGTH_LONG).show()
                 } else {
                     val map = HashMap<String, Any>()
                     map[RequestParamsUtils.userEmail] = binding.etEmail.text.toString().trim()

@@ -317,7 +317,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
             Utils.ShowProgressDialog(getActivity());
             FormBody.Builder body = RequestParamsUtils.newRequestFormBody(getActivity());
             body.addEncoded(RequestParamsUtils.user_Id, Utils.getLoginDataData().getUserId().toString());
-            body.addEncoded(RequestParamsUtils.device_id, Utils.getLoginDataData().getUserDeviceId().toString());
+            body.addEncoded(RequestParamsUtils.device_id, Utils.getLoginDataData().getUserDeviceId());
 
             Call call = AsyncHttpRequest.newRequestPost(getActivity(), body.build(), URLs.LOGOUT());
             call.enqueue(new LogOutHandler(getActivity()));
@@ -332,7 +332,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
             Utils.ShowProgressDialog(getActivity());
             FormBody.Builder body = RequestParamsUtils.newRequestFormBody(getActivity());
             body.addEncoded(RequestParamsUtils.user_Id, Utils.getLoginDataData().getUserId().toString());
-            body.addEncoded(RequestParamsUtils.device_id, Utils.getLoginDataData().getUserDeviceId().toString());
+            body.addEncoded(RequestParamsUtils.device_id, Utils.getLoginDataData().getUserDeviceId());
 
             Call call = AsyncHttpRequest.newRequestPost(getActivity(), body.build(), URLs.DELETE_ACCOUNT());
             call.enqueue(new DeleteAccountHandler(getActivity()));
