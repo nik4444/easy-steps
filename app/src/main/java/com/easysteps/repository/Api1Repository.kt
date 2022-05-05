@@ -13,6 +13,14 @@ class Api1Repository(private val apiService: IApiService1) : BaseRepository() {
 
     suspend fun verifyOtp(map: HashMap<String, Any>) = callApi { apiService.verifyOtp(map) }
 
+    suspend fun updateDailyStep() = callApi { apiService.updateDailyStep() }
+
+    suspend fun getDailyStep() = callApi { apiService.getDailyStep() }
+
+    suspend fun addDailyStep(map: HashMap<String, Any>) = callApi { apiService.addMyDailySteps(map) }
+
+    suspend fun addToAcceptReward(map: HashMap<String, Any>) = callApi { apiService.addToAcceptReward(map) }
+
     companion object {
         @Volatile
         private var instance: Api1Repository? = null

@@ -1,6 +1,5 @@
 package com.easysteps.fragment;
 
-import static com.easysteps.activity.MainActivity.card_navigation;
 
 import android.app.Activity;
 import android.content.Context;
@@ -45,6 +44,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -92,9 +92,10 @@ public class ProfileFragment extends Fragment implements View.OnClickListener, /
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
-        if (card_navigation.getVisibility() == View.VISIBLE) {
-            card_navigation.setVisibility(View.GONE);
-        }
+//ByME
+//        if (card_navigation.getVisibility() == View.VISIBLE) {
+//            card_navigation.setVisibility(View.GONE);
+//        }
         initViewOrClick(view);
         return view;
     }
@@ -102,9 +103,10 @@ public class ProfileFragment extends Fragment implements View.OnClickListener, /
     @Override
     public void onDetach() {
         super.onDetach();
-        if (card_navigation.getVisibility() == View.GONE) {
-            card_navigation.setVisibility(View.VISIBLE);
-        }
+        //BYME
+//        if (card_navigation.getVisibility() == View.GONE) {
+//            card_navigation.setVisibility(View.VISIBLE);
+//        }
     }
 
     @Override
@@ -131,26 +133,26 @@ public class ProfileFragment extends Fragment implements View.OnClickListener, /
     }
 
     private void initView(View view) {
-        edt_name = (EditText) view.findViewById(R.id.edt_name);
-        edt_email_address = (EditText) view.findViewById(R.id.edt_email_address);
-        edt_address = (EditText) view.findViewById(R.id.edt_address);
-        edt_postcode = (EditText) view.findViewById(R.id.edt_postcode);
-        edt_city = (EditText) view.findViewById(R.id.edt_city);
-        txt_country = (TextView) view.findViewById(R.id.txt_country);
-        edt_state = (EditText) view.findViewById(R.id.edt_state);
-        txt_save = (TextView) view.findViewById(R.id.txt_save);
-        ic_back = (LinearLayout) view.findViewById(R.id.ic_back);
+        edt_name = view.findViewById(R.id.edt_name);
+        edt_email_address = view.findViewById(R.id.edt_email_address);
+        edt_address = view.findViewById(R.id.edt_address);
+        edt_postcode = view.findViewById(R.id.edt_postcode);
+        edt_city = view.findViewById(R.id.edt_city);
+        txt_country = view.findViewById(R.id.txt_country);
+        edt_state = view.findViewById(R.id.edt_state);
+        txt_save = view.findViewById(R.id.txt_save);
+        ic_back = view.findViewById(R.id.ic_back);
         txt_country.setOnClickListener(this);
         txt_save.setOnClickListener(this);
         ic_back.setOnClickListener(this);
     }
     private void setData() {
-        edt_name.setText(Utils.getLoginDataData().getUserName().toString());
-        edt_address.setText(Utils.getLoginDataData().getUserAddress().toString());
-        txt_country.setText(Utils.getLoginDataData().getUserCountry().toString());
-        edt_state.setText(Utils.getLoginDataData().getUserState().toString());
-        edt_city.setText(Utils.getLoginDataData().getUserCity().toString());
-        edt_postcode.setText(Utils.getLoginDataData().getUserPostCode().toString());
+        edt_name.setText(Utils.getLoginDataData().getUserName());
+        edt_address.setText(Utils.getLoginDataData().getUserAddress());
+        txt_country.setText(Utils.getLoginDataData().getUserCountry());
+        edt_state.setText(Utils.getLoginDataData().getUserState());
+        edt_city.setText(Utils.getLoginDataData().getUserCity());
+        edt_postcode.setText(Utils.getLoginDataData().getUserPostCode());
     }
 
     @Override
@@ -177,7 +179,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener, /
             byte[] buffer = new byte[size];
             inputStream.read(buffer);
             inputStream.close();
-            json = new String(buffer, "UTF-8");
+            json = new String(buffer, StandardCharsets.UTF_8);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -211,7 +213,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener, /
             byte[] buffer = new byte[size];
             inputStream.read(buffer);
             inputStream.close();
-            json = new String(buffer, "UTF-8");
+            json = new String(buffer, StandardCharsets.UTF_8);
 
         } catch (IOException e) {
             e.printStackTrace();

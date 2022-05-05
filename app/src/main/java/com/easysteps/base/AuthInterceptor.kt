@@ -11,6 +11,7 @@ class AuthInterceptor : Interceptor {
         val original = chain.request()
         val requestBuilder = original.newBuilder()
             .method(original.method, original.body)
+            .header("Content-Type", "application/json")
             .header(IBaseService.Accept, "application/json")
             .header(Authorization, "Bearer ${SharedPref.authToken}")
         return chain.proceed(requestBuilder.build())

@@ -1,7 +1,5 @@
 package com.easysteps.fragment;
 
-import static com.easysteps.activity.MainActivity.card_navigation;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
@@ -65,15 +63,16 @@ public class ChangePasswordFragment extends Fragment implements View.OnClickList
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        if (card_navigation.getVisibility() == View.VISIBLE){
-            card_navigation.setVisibility(View.GONE);
-        }
+        //byME
+//        if (card_navigation.getVisibility() == View.VISIBLE){
+//            card_navigation.setVisibility(View.GONE);
+//        }
 
-         img_back = (ImageView) view.findViewById(R.id.img_back);
-        txt_save = (TextView) view.findViewById(R.id.txt_save);
-        edt_current_password = (EditText) view.findViewById(R.id.edt_current_password);
-        edt_new_password = (EditText) view.findViewById(R.id.edt_new_password);
-        edt_confirm_password = (EditText) view.findViewById(R.id.edt_confirm_password);
+         img_back = view.findViewById(R.id.img_back);
+        txt_save = view.findViewById(R.id.txt_save);
+        edt_current_password = view.findViewById(R.id.edt_current_password);
+        edt_new_password = view.findViewById(R.id.edt_new_password);
+        edt_confirm_password = view.findViewById(R.id.edt_confirm_password);
 
         img_back.setOnClickListener(this);
         txt_save.setOnClickListener(this);
@@ -82,9 +81,10 @@ public class ChangePasswordFragment extends Fragment implements View.OnClickList
     @Override
     public void onDetach() {
         super.onDetach();
-        if (card_navigation.getVisibility() == View.GONE){
-            card_navigation.setVisibility(View.VISIBLE);
-        }
+        //byme
+//        if (card_navigation.getVisibility() == View.GONE){
+//            card_navigation.setVisibility(View.VISIBLE);
+//        }
     }
 
     @Override

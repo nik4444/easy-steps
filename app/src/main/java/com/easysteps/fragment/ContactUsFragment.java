@@ -15,7 +15,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.easysteps.R;
-import com.easysteps.activity.MainActivity;
 
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent;
 
@@ -52,10 +51,10 @@ public class ContactUsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         txt_cancel = view.findViewById(R.id.txt_cancel);
-        txt_contact_to = (TextView) view.findViewById(R.id.txt_contact_to);
-        edt_subject = (EditText) view.findViewById(R.id.edt_subject);
+        txt_contact_to = view.findViewById(R.id.txt_contact_to);
+        edt_subject = view.findViewById(R.id.edt_subject);
         rl_contact_us = view.findViewById(R.id.rl_contact_us);
-        img_send = (ImageView) view.findViewById(R.id.img_send);
+        img_send = view.findViewById(R.id.img_send);
 
         txt_contact_to.setText(getActivity().getString(R.string.text_mail));
 
@@ -75,11 +74,12 @@ public class ContactUsFragment extends Fragment {
         KeyboardVisibilityEvent.setEventListener(
                 getActivity(),
                 isOpen -> {
-                    if (isOpen) {
-                        MainActivity.card_navigation.setVisibility(View.GONE);
-                    } else {
-                        MainActivity.card_navigation.setVisibility(View.VISIBLE);
-                    }
+                    //bYME
+//                    if (isOpen) {
+//                        MainActivity.card_navigation.setVisibility(View.GONE);
+//                    } else {
+//                        MainActivity.card_navigation.setVisibility(View.VISIBLE);
+//                    }
                 });
 
     }

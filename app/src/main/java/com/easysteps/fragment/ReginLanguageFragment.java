@@ -1,6 +1,5 @@
 package com.easysteps.fragment;
 
-import static com.easysteps.activity.MainActivity.card_navigation;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -129,26 +128,29 @@ public class ReginLanguageFragment extends Fragment implements View.OnClickListe
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        if (card_navigation.getVisibility() == View.VISIBLE){
-            card_navigation.setVisibility(View.GONE);
-        }
+
+        //byME
+//        if (card_navigation.getVisibility() == View.VISIBLE){
+//            card_navigation.setVisibility(View.GONE);
+//        }
         initView(view);
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        if (card_navigation.getVisibility() == View.GONE){
-            card_navigation.setVisibility(View.VISIBLE);
-        }
+        //BYME
+//        if (card_navigation.getVisibility() == View.GONE){
+//            card_navigation.setVisibility(View.VISIBLE);
+//        }
     }
 
     private void initView(View view) {
-        txt_country = (TextView) view.findViewById(R.id.txt_country);
-        txt_language = (TextView) view.findViewById(R.id.txt_language);
-        ll_region = (LinearLayout) view.findViewById(R.id.ll_region);
-        ll_language = (LinearLayout) view.findViewById(R.id.ll_language);
-        ic_back = (ImageView) view.findViewById(R.id.ic_back);
+        txt_country = view.findViewById(R.id.txt_country);
+        txt_language = view.findViewById(R.id.txt_language);
+        ll_region = view.findViewById(R.id.ll_region);
+        ll_language = view.findViewById(R.id.ll_language);
+        ic_back = view.findViewById(R.id.ic_back);
         ll_region.setOnClickListener(this);
         ll_language.setOnClickListener(this);
         ic_back.setOnClickListener(this);
@@ -171,11 +173,11 @@ public class ReginLanguageFragment extends Fragment implements View.OnClickListe
                 regionDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 regionDialog.setContentView(R.layout.region_dialog);
 
-                ll_usa = (LinearLayout) regionDialog.findViewById(R.id.ll_usa);
-                ll_uk = (LinearLayout) regionDialog.findViewById(R.id.ll_uk);
-                ll_brazilian = (LinearLayout) regionDialog.findViewById(R.id.ll_brazilian);
-                ll_argentina = (LinearLayout) regionDialog.findViewById(R.id.ll_argentina);
-                ll_uae = (LinearLayout) regionDialog.findViewById(R.id.ll_uae);
+                ll_usa = regionDialog.findViewById(R.id.ll_usa);
+                ll_uk = regionDialog.findViewById(R.id.ll_uk);
+                ll_brazilian = regionDialog.findViewById(R.id.ll_brazilian);
+                ll_argentina = regionDialog.findViewById(R.id.ll_argentina);
+                ll_uae = regionDialog.findViewById(R.id.ll_uae);
 
                 ll_usa.setOnClickListener(view1 -> {
                     region = getActivity().getString(R.string.usa_language);
@@ -224,11 +226,11 @@ public class ReginLanguageFragment extends Fragment implements View.OnClickListe
                 languageDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 languageDialog.setContentView(R.layout.language_dialog);
 
-                txt_title = (TextView) languageDialog.findViewById(R.id.txt_title);
-                ll_arabic = (LinearLayout) languageDialog.findViewById(R.id.ll_arabic);
-                ll_english = (LinearLayout) languageDialog.findViewById(R.id.ll_english);
-                ll_portuguese = (LinearLayout) languageDialog.findViewById(R.id.ll_portuguese);
-                ll_spanish = (LinearLayout) languageDialog.findViewById(R.id.ll_spanish);
+                txt_title = languageDialog.findViewById(R.id.txt_title);
+                ll_arabic = languageDialog.findViewById(R.id.ll_arabic);
+                ll_english = languageDialog.findViewById(R.id.ll_english);
+                ll_portuguese = languageDialog.findViewById(R.id.ll_portuguese);
+                ll_spanish = languageDialog.findViewById(R.id.ll_spanish);
 
                 ll_arabic.setOnClickListener(view13 -> {
                     language = getActivity().getString(R.string.arabic_language);
@@ -278,7 +280,7 @@ public class ReginLanguageFragment extends Fragment implements View.OnClickListe
         conf.setLocale(new Locale(lan.toLowerCase()));
         res.updateConfiguration(conf, dm);
         setSortLanguage(getActivity(),PREFS_SORT_LANGUAGE_NAME,lan);
-        Intent intent = new Intent(getActivity(),MainActivity.class);
+        Intent intent = new Intent(getActivity(), MainActivity.class);
         startActivity(intent);
         getActivity().finish();
     }

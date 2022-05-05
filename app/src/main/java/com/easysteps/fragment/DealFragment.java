@@ -1,6 +1,5 @@
 package com.easysteps.fragment;
 
-import static com.easysteps.fragment.HomeFragment.stepCoins;
 
 import android.app.Activity;
 import android.content.Context;
@@ -80,18 +79,19 @@ public class DealFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        rv_deal = (RecyclerView) view.findViewById(R.id.rv_deal);
-        txt_coins = (TextView) view.findViewById(R.id.txt_coins);
-        txt_today_date = (TextView) view.findViewById(R.id.txt_today_date);
+        rv_deal = view.findViewById(R.id.rv_deal);
+        txt_coins = view.findViewById(R.id.txt_coins);
+        txt_today_date = view.findViewById(R.id.txt_today_date);
 
         String sortLanguage = getSortLanguage(getActivity(), PREFS_SORT_LANGUAGE_NAME);
 
         SimpleDateFormat sdf = new SimpleDateFormat("MMMM dd, yyyy", new Locale(sortLanguage, sortLanguage.toUpperCase(Locale.ROOT)));
         todayDate = sdf.format(new Date());
-        if (stepCoins == 0) {
-            stepCoins = 0;
-        }
-        txt_coins.setText("" + stepCoins);
+        //byME
+//        if (stepCoins == 0) {
+//            stepCoins = 0;
+//        }
+//        txt_coins.setText("" + stepCoins);
         txt_today_date.setText("" + todayDate);
         GetDealsData();
 

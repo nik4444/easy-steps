@@ -6,6 +6,7 @@ package com.easysteps.viewModel.models
 
 data class BaseResponse<out T>(
     var status: Int,
+    var addedornot: Int=0,
     val message: String = "",
     val data: T? = null
 )
@@ -35,4 +36,28 @@ data class SignupData(
     var userDeviceId: String? = null,
     var userId: Int? = null,
     var userToken: String? = null
+)
+
+data class StepData(
+    val stepsCount: Int,
+    val userCoins: String,
+    val todayUserCoins: String,
+    val stepsKm: Double,
+)
+
+data class GetDailyStepData(
+    val stepsCount: Int,
+    val userCoins: Int,
+    val todayUserCoins: Int,
+    val stepsKm: Double,
+    val RewardedData: List<RewardData>
+)
+
+data class RewardData(
+    val rewardedId: Int,
+    val order: Int,
+    val coins: Int,
+    var isPerformed: Int,
+    val title: String,
+    val createdAt: String,
 )

@@ -1,12 +1,11 @@
 package com.easysteps.api
 
 import com.easysteps.api.IBaseService.Companion.getOkHttpClient
-import com.easysteps.helper.BASE_URL
-import com.easysteps.helper.FORGOT_PASSWORD
-import com.easysteps.helper.LOGIN
-import com.easysteps.helper.REGISTER
+import com.easysteps.helper.*
 import com.easysteps.viewModel.models.BaseResponse
+import com.easysteps.viewModel.models.GetDailyStepData
 import com.easysteps.viewModel.models.SignupData
+import com.easysteps.viewModel.models.StepData
 import com.google.gson.GsonBuilder
 import retrofit2.Response
 import retrofit2.Retrofit
@@ -28,6 +27,18 @@ interface IApiService1 : IBaseService {
 
     @POST(REGISTER)
     suspend fun register(@Body body: HashMap<String, Any>): Response<BaseResponse<SignupData>>
+
+    @POST(UPDATE_DAILY_STEPS)
+    suspend fun updateDailyStep(): Response<BaseResponse<StepData>>
+
+    @POST(GET_DAILY_STEPS)
+    suspend fun getDailyStep(): Response<BaseResponse<GetDailyStepData>>
+
+    @POST(ADD_DAILY_STEPS)
+    suspend fun addMyDailySteps(@Body body: HashMap<String, Any>): Response<BaseResponse<StepData>>
+
+    @POST(ADD_ACCEPT_REWARD)
+    suspend fun addToAcceptReward(@Body body: HashMap<String, Any>): Response<BaseResponse<Any>>
 
     companion object {
         fun getService(): IApiService1 {

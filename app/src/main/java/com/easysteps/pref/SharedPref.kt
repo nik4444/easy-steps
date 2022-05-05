@@ -13,8 +13,18 @@ object SharedPref : KotprefModel() {
     var rememberPassword by stringPref("")
     var registerName by stringPref("")
 
+    var f1327sp by stringPref("20000")
+    var distanceMeasure by booleanPref(false)
+    var condition_start_steps by intPref(0)
+    var condition_end_steps by intPref(0)
+    var current_steps by intPref(0)
+    var last_steps by intPref(0)
+
+    var todayDate by stringPref("")
+
     var isLogin by booleanPref()
     var isRemember by booleanPref(false)
+    var account_first_time by booleanPref(false)
 
     var signupData by gsonNullablePref<SignupData>()
 
