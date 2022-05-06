@@ -2,6 +2,7 @@ package com.easysteps.pref
 
 import com.chibatching.kotpref.KotprefModel
 import com.chibatching.kotpref.gsonpref.gsonNullablePref
+import com.easysteps.viewModel.models.ProfileUpdate
 import com.easysteps.viewModel.models.SignupData
 
 object SharedPref : KotprefModel() {
@@ -24,9 +25,11 @@ object SharedPref : KotprefModel() {
 
     var isLogin by booleanPref()
     var isRemember by booleanPref(false)
+    var isFaceLocked by booleanPref(false)
     var account_first_time by booleanPref(false)
 
     var signupData by gsonNullablePref<SignupData>()
+    var updateProfile by gsonNullablePref<ProfileUpdate>()
 
     fun clearPref() {
         clear()

@@ -2,7 +2,6 @@ package com.easysteps
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.biometric.BiometricPrompt
@@ -22,6 +21,7 @@ import com.easysteps.pref.SharedPref.rememberPassword
 import com.easysteps.retrofit.RequestParamsUtils
 import com.easysteps.viewModel.LoginViewModel
 import com.pixplicity.easyprefs.library.Prefs
+import timber.log.Timber
 
 /**
  * Created by NIKUNJ on 29-04-2022.
@@ -50,7 +50,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
     private fun initView() {
         val executor = ContextCompat.getMainExecutor(this)
 
-        Log.e("TAG", " onCreate: " + Prefs.getString(PrefKey.userToken, "test"))
+        Timber.e(" onCreate: " + Prefs.getString(PrefKey.userToken, "test"))
 
         val biometricPrompt = BiometricPrompt(this@LoginActivity,
             executor, object : BiometricPrompt.AuthenticationCallback() {
@@ -59,7 +59,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
                     errString: CharSequence
                 ) {
                     super.onAuthenticationError(errorCode, errString)
-                    Log.e("TAG", "onAuthenticationError: $errString")
+                    Timber.e("onAuthenticationError: $errString")
                 }
 
                 override fun onAuthenticationSucceeded(

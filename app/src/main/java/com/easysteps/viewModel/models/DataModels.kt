@@ -53,6 +53,24 @@ data class GetDailyStepData(
     val RewardedData: List<RewardData>
 )
 
+data class ProfileUpdate(
+    var id: Int? = null,
+    var userEmail: String? = null,
+    var userName: String? = null,
+    var userAddress: String? = null,
+    var userCity: String? = null,
+    var userPostCode: String? = null,
+    var userSteps: Int? = null,
+    var userCountry: String? = null,
+    var userState: String? = null,
+    var email_verified_at: String? = null,
+    var userPhone: String? = null,
+    var userProfile: String? = null,
+    var userBlocked: String? = null,
+    var userLongitude: String? = null,
+    var userLatitude: String? = null,
+)
+
 data class RewardData(
     val rewardedId: Int,
     val order: Int,

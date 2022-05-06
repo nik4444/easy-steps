@@ -104,13 +104,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), 
 
     }
 
-    fun loadFragment(fragment: Fragment?) {
+    private fun loadFragment(fragment: Fragment?) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.frameContainer, fragment!!)
         transaction.commit()
     }
 
-    fun changeFragment(fragment: Fragment?, tagFragmentName: String?) {
+    private fun changeFragment(fragment: Fragment?, tagFragmentName: String?) {
         val mFragmentManager = supportFragmentManager
         val fragmentTransaction = mFragmentManager.beginTransaction()
         val currentFragment = mFragmentManager.primaryNavigationFragment

@@ -8,6 +8,7 @@ import com.easysteps.R
 import com.easysteps.helper.Utils.HideProgressDialog
 import com.easysteps.helper.Utils.ShowProgressDialog
 import com.easysteps.modelClases.ResponseCode
+import com.easysteps.multilanguage.LocaleManager
 import kotlinx.coroutines.channels.ReceiveChannel
 import org.json.JSONObject
 import retrofit2.HttpException
@@ -100,6 +101,11 @@ abstract class BaseActivity<VB : ViewDataBinding>(private val layoutRes: Int) :
         optString?.let {
 
         }
+    }
+
+    protected fun setNewLocale(language: String) {
+        LocaleManager.setNewLocale(this, language)
+        recreate()
     }
 }
 

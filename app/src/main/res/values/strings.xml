@@ -176,4 +176,12 @@
 
     <string name="text_remember_me">Remember me</string>
     <string name="text_face">Enable Face Id / Touch ID</string>
+
+    \\new strings
+
+    <string name="currentPassword">current password is empty</string>
+    <string name="newPassword">new password is empty</string>
+    <string name="confirmPassword">confirm password is empty</string>
+    <string name="passwordMatch">password did not match </string>
+
 </resources>

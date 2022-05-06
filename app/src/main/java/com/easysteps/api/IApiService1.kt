@@ -2,10 +2,7 @@ package com.easysteps.api
 
 import com.easysteps.api.IBaseService.Companion.getOkHttpClient
 import com.easysteps.helper.*
-import com.easysteps.viewModel.models.BaseResponse
-import com.easysteps.viewModel.models.GetDailyStepData
-import com.easysteps.viewModel.models.SignupData
-import com.easysteps.viewModel.models.StepData
+import com.easysteps.viewModel.models.*
 import com.google.gson.GsonBuilder
 import retrofit2.Response
 import retrofit2.Retrofit
@@ -18,6 +15,18 @@ interface IApiService1 : IBaseService {
 
     @POST(LOGIN)
     suspend fun login(@Body body: HashMap<String, Any>): Response<BaseResponse<SignupData>>
+
+    @POST(UPDATE_PROFILE)
+    suspend fun updateProfile(@Body body: HashMap<String, Any>): Response<BaseResponse<ProfileUpdate>>
+
+    @POST(LOGOUT)
+    suspend fun logout(@Body body: HashMap<String, Any>): Response<BaseResponse<Any>>
+
+    @POST(DELETE_ACCOUNT)
+    suspend fun deleteAccount(@Body body: HashMap<String, Any>): Response<BaseResponse<Any>>
+
+    @POST(CHANGE_PASSWORD)
+    suspend fun changesPassword(@Body body: HashMap<String, Any>): Response<BaseResponse<Any>>
 
     @POST(FORGOT_PASSWORD)
     suspend fun forgotPasswordPassword(@Body body: HashMap<String, Any>): Response<BaseResponse<Any>>
