@@ -22,6 +22,12 @@ interface IApiService1 : IBaseService {
     @POST(LOGOUT)
     suspend fun logout(@Body body: HashMap<String, Any>): Response<BaseResponse<Any>>
 
+    @POST(DEALS_DATE)
+    suspend fun getDealsDate(): Response<BaseResponses<GetDealData>>
+
+    @POST(STEP_HISTORY)
+    suspend fun getStepsHistory(): Response<BaseResponses<GetMyStepsHistoryData>>
+
     @POST(DELETE_ACCOUNT)
     suspend fun deleteAccount(@Body body: HashMap<String, Any>): Response<BaseResponse<Any>>
 

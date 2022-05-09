@@ -2,7 +2,6 @@ package com.easysteps.fragment
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.easysteps.R
 import com.easysteps.base.BaseFragment
@@ -55,7 +54,6 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(R.layout.fragment_p
                 SharedPref.updateProfile = it.data
                 binding.icBack.performClick()
             }
-            Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
         }
     }
 

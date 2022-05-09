@@ -6,9 +6,16 @@ package com.easysteps.viewModel.models
 
 data class BaseResponse<out T>(
     var status: Int,
-    var addedornot: Int=0,
+    var addedornot: Int = 0,
     val message: String = "",
     val data: T? = null
+)
+
+data class BaseResponses<out T>(
+    var status: Int,
+    var addedornot: Int = 0,
+    val message: String = "",
+    val data: List<T>? = null
 )
 
 data class SignupData(
@@ -78,4 +85,30 @@ data class RewardData(
     var isPerformed: Int,
     val title: String,
     val createdAt: String,
+)
+
+data class GetDealData(
+    var dealId: Int,
+    val DealTitle: String,
+    val DealFileType: String,
+    val DealPicture: String,
+    val DealLink: String,
+    val Dealpoints: Int,
+    val IsRunning: Int,
+    val DealStatus: Int,
+)
+
+data class GetMyStepsHistoryData(
+    var StepsId: Int,
+    var UserId: Int,
+    var StepsCount: Int,
+    var UserCoins: Int,
+    var StepsKm: Double,
+    val DealTitle: String,
+    val CreatedAt: String,
+    val FormatStepsMyDate: String,
+    val FormatStepsDate: String,
+    val FormatStepsMonth: String,
+    val FormatStepsYear: String,
+    val StepsDate: String,
 )

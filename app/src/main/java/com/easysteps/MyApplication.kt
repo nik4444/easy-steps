@@ -22,8 +22,16 @@ class MyApplication : Application() {
 
     private val PROCESS = "com.easysteps"
 
+    companion object {
+        private lateinit var mInstance: MyApplication
+
+        @Synchronized
+        fun getInstance(): MyApplication = mInstance
+    }
+
     override fun onCreate() {
         super.onCreate()
+        mInstance = this
 
         Kotpref.init(this)
         Kotpref.gson = Gson()

@@ -1,99 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/card_view"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/_150sdp"
-    android:layout_gravity="center_horizontal"
-    android:layout_margin="@dimen/_5sdp"
-    app:cardCornerRadius="@dimen/_20sdp">
+    android:id="@+id/card_view">
 
-    <RelativeLayout
-        android:id="@+id/rl_deal"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="@dimen/_150sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/_20sdp">
 
-        <ImageView
-            android:id="@+id/img_deal"
+        <RelativeLayout
+            android:id="@+id/rl_deal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:src="@color/black" />
-
-        <LinearLayout
-            android:id="@+id/ll_points"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_25sdp"
-            android:layout_marginHorizontal="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:background="@drawable/round_corner_white"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
             <ImageView
-                android:layout_width="@dimen/_15sdp"
-                android:layout_height="@dimen/_15sdp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/_7sdp"
-                android:src="@drawable/ic_coins" />
+                android:id="@+id/imgDeal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@color/black" />
+
+            <LinearLayout
+                android:id="@+id/llPoints"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/round_corner_white"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_7sdp"
+                    android:src="@drawable/ic_coins" />
+
+                <TextView
+                    android:id="@+id/txtCoins"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:fontFamily="@font/regular"
+                    android:padding="@dimen/_2sdp"
+                    android:text="@string/text_points"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
+
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/txt_coins"
+                android:id="@+id/txt_left"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/round_corner_ads_new"
                 android:fontFamily="@font/regular"
-                android:padding="@dimen/_2sdp"
-                android:text="@string/text_points"
-                android:textColor="@color/black"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_7sdp"
+                android:paddingVertical="@dimen/_5sdp"
+                android:text="@string/text_few_left"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_10ssp" />
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/txtNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llPoints"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/round_corner_ads_new"
+                android:fontFamily="@font/regular"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_5sdp"
+                android:text="@string/text_new_ad"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp" />
 
-        <TextView
-            android:id="@+id/txt_left"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginHorizontal="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:background="@drawable/round_corner_ads_new"
-            android:fontFamily="@font/regular"
-            android:gravity="center"
-            android:paddingHorizontal="@dimen/_7sdp"
-            android:paddingVertical="@dimen/_5sdp"
-            android:text="@string/text_few_left"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_10ssp" />
+            <TextView
+                android:id="@+id/txtDealName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:fontFamily="@font/bold"
+                android:text="@string/text_deal"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp" />
 
-        <TextView
-            android:id="@+id/txt_new"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ll_points"
-            android:layout_marginHorizontal="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:background="@drawable/round_corner_ads_new"
-            android:fontFamily="@font/regular"
-            android:gravity="center"
-            android:paddingHorizontal="@dimen/_10sdp"
-            android:paddingVertical="@dimen/_5sdp"
-            android:text="@string/text_new_ad"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_10ssp" />
-
-        <TextView
-            android:id="@+id/txt_deal_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginHorizontal="@dimen/_15sdp"
-            android:layout_marginBottom="@dimen/_15sdp"
-            android:fontFamily="@font/bold"
-            android:text="@string/text_deal"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_15ssp" />
-
-    </RelativeLayout>
-
-</androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

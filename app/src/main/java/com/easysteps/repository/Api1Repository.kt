@@ -11,6 +11,10 @@ class Api1Repository(private val apiService: IApiService1) : BaseRepository() {
 
     suspend fun logout(map: HashMap<String, Any>) = callApi { apiService.logout(map) }
 
+    suspend fun getDealsDate() = callApi { apiService.getDealsDate() }
+
+    suspend fun getStepsHistory() = callApi { apiService.getStepsHistory() }
+
     suspend fun deleteAccount(map: HashMap<String, Any>) = callApi { apiService.deleteAccount(map) }
 
     suspend fun changesPassword(map: HashMap<String, Any>) = callApi { apiService.changesPassword(map) }
