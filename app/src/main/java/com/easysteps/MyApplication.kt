@@ -3,12 +3,14 @@ package com.easysteps
 import android.app.ActivityManager
 import android.app.Application
 import android.content.Context
+import android.content.res.Configuration
 import android.os.Build
 import android.os.Process
 import android.webkit.WebView
 import com.chibatching.kotpref.Kotpref
 import com.chibatching.kotpref.gsonpref.gson
 import com.easysteps.helper.PrefKey
+import com.easysteps.multilanguage.LocaleManager
 import com.google.android.gms.tasks.Task
 import com.google.firebase.messaging.FirebaseMessaging
 import com.google.gson.Gson
@@ -56,10 +58,6 @@ class MyApplication : Application() {
             }
     }
 
-    override fun attachBaseContext(context: Context?) {
-        super.attachBaseContext(context)
-    }
-
     private fun initPieWebView() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             val processName = getProcessName(this)
@@ -86,6 +84,15 @@ class MyApplication : Application() {
 
     private fun isEmpty(s: String?): Boolean {
         return s == null || s.trim().isEmpty()
+    }
+
+    override fun attachBaseContext(base: Context) {
+        super.attachBaseContext(LocaleManager.setLocale(base))
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        LocaleManager.setLocale(this)
     }
 
 }

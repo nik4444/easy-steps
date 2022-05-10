@@ -33,7 +33,7 @@
 
 
     <LinearLayout
-        android:id="@+id/ll_usa"
+        android:id="@+id/llUsa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -58,7 +58,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll_uk"
+        android:id="@+id/llUk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -83,7 +83,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll_brazilian"
+        android:id="@+id/llBrazilian"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -108,7 +108,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll_argentina"
+        android:id="@+id/llArgentina"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -133,7 +133,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll_uae"
+        android:id="@+id/llUae"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"

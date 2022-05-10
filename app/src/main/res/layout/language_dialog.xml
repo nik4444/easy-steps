@@ -8,14 +8,14 @@
     android:padding="@dimen/_10ssp">
 
     <LinearLayout
-        android:id="@+id/ll_select"
+        android:id="@+id/llSelect"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="@dimen/_5sdp">
 
         <TextView
-            android:id="@+id/txt_title"
+            android:id="@+id/txtTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -32,7 +32,7 @@
         android:layout_height="@dimen/_1sdp"/>
 
     <LinearLayout
-        android:id="@+id/ll_english"
+        android:id="@+id/llEnglish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -52,7 +52,7 @@
 
 
     <LinearLayout
-        android:id="@+id/ll_arabic"
+        android:id="@+id/llArabic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -71,7 +71,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll_portuguese"
+        android:id="@+id/llPortuguese"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -90,7 +90,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll_spanish"
+        android:id="@+id/llSpanish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"

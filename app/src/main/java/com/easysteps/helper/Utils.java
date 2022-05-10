@@ -195,11 +195,7 @@ public class Utils {
     }
 
     public static boolean isLogin() {
-        if (Prefs.getBoolean(PrefKey.is_login, false)) {
-            return true;
-        } else {
-            return false;
-        }
+        return Prefs.getBoolean(PrefKey.is_login, false);
     }
 
     public static int getSteps() {

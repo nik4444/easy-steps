@@ -22,6 +22,9 @@ interface IApiService1 : IBaseService {
     @POST(LOGOUT)
     suspend fun logout(@Body body: HashMap<String, Any>): Response<BaseResponse<Any>>
 
+    @POST(UPDATE_REGION_LANG)
+    suspend fun updateRegionLang(@Body body: HashMap<String, Any>): Response<BaseResponse<Any>>
+
     @POST(DEALS_DATE)
     suspend fun getDealsDate(): Response<BaseResponses<GetDealData>>
 

@@ -9,7 +9,9 @@ object SharedPref : KotprefModel() {
 
     var authToken by stringPref("testToken")
 
-    var language by stringPref("en")
+    var language by stringPref("")
+    var selectedLang by stringPref("en")
+    var region by stringPref("")
     var rememberEmail by stringPref("")
     var rememberPassword by stringPref("")
     var registerName by stringPref("")

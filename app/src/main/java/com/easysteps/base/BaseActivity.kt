@@ -1,5 +1,6 @@
 package com.easysteps.base
 
+import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -103,9 +104,13 @@ abstract class BaseActivity<VB : ViewDataBinding>(private val layoutRes: Int) :
         }
     }
 
-    protected fun setNewLocale(language: String) {
+    fun setNewLocale(language: String) {
         LocaleManager.setNewLocale(this, language)
         recreate()
+    }
+
+    override fun attachBaseContext(base: Context) {
+        super.attachBaseContext(LocaleManager.setLocale(base))
     }
 }
 

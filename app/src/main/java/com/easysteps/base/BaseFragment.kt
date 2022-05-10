@@ -1,17 +1,21 @@
 package com.easysteps.base
 
+import android.app.AlertDialog
+import android.content.Context
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-import com.easysteps.helper.Utils
+import com.airbnb.lottie.LottieAnimationView
+import com.easysteps.R
 import com.google.android.material.snackbar.Snackbar
+
 import kotlinx.coroutines.channels.ReceiveChannel
 
 /**
@@ -19,6 +23,9 @@ import kotlinx.coroutines.channels.ReceiveChannel
  */
 
 abstract class BaseFragment<VB : ViewDataBinding>(@LayoutRes val layoutRes: Int) : Fragment() {
+
+    var dialogBuilder: AlertDialog.Builder? = null
+    var pd: AlertDialog? = null
 
     protected lateinit var binding: VB
     protected val listSubscription = ArrayList<ReceiveChannel<*>>()
@@ -42,7 +49,7 @@ abstract class BaseFragment<VB : ViewDataBinding>(@LayoutRes val layoutRes: Int)
     }
 
     protected fun updateLoaderUI(isShow: Boolean) {
-        if (isShow) Utils.ShowProgressDialog(requireActivity()) else Utils.HideProgressDialog(requireActivity())
+        if (isShow) showProgressDialog(requireActivity()) else pd?.dismiss()
     }
 
 
@@ -55,5 +62,21 @@ abstract class BaseFragment<VB : ViewDataBinding>(@LayoutRes val layoutRes: Int)
         val activity = requireActivity()
         if (activity is BaseActivity<*>) activity.handleError(it)
     }
+
+    private fun showProgressDialog(context: Context?) {
+        dialogBuilder = AlertDialog.Builder(context)
+        val layoutBuilder: View = layoutInflater.inflate(R.layout.custom_progress, null)
+        val lav_actionBar: LottieAnimationView = layoutBuilder.findViewById(R.id.lav_actionBar)
+        dialogBuilder?.setView(layoutBuilder)
+        lav_actionBar.setAnimation(R.raw.apiloader)
+        lav_actionBar.playAnimation()
+        lav_actionBar.loop(true)
+        pd = dialogBuilder?.create()
+        pd?.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        pd?.window!!.clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND)
+        pd?.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        pd?.show()
+    }
+
 }
 
