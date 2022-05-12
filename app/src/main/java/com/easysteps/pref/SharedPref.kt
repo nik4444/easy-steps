@@ -18,9 +18,11 @@ object SharedPref : KotprefModel() {
 
     var f1327sp by stringPref("20000")
     var distanceMeasure by booleanPref(false)
+    var accountFirstTime by booleanPref(false)
     var condition_start_steps by intPref(0)
     var condition_end_steps by intPref(0)
     var current_steps by intPref(0)
+    var userCoins by intPref(0)
     var last_steps by intPref(0)
 
     var todayDate by stringPref("")

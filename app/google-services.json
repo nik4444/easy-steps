@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "534568157204",
-    "project_id": "easy-steps-342905",
-    "storage_bucket": "easy-steps-342905.appspot.com"
+    "project_number": "319127397052",
+    "project_id": "easysteps-e4649",
+    "storage_bucket": "easysteps-e4649.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:534568157204:android:f1013e41e53583f0bea701",
+        "mobilesdk_app_id": "1:319127397052:android:c704fd89643467fb3026b9",
         "android_client_info": {
           "package_name": "com.easysteps"
         }
       },
       "oauth_client": [
         {
-          "client_id": "534568157204-4s70ouvfql5oaucjkjklag16iqt8lked.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.easysteps",
-            "certificate_hash": "1ee638b1a90e0c4c0be7b2911ee53c33cefdede3"
-          }
-        },
-        {
-          "client_id": "534568157204-q7a03ofp5p6m5gkjpu3630ruqrdm5le3.apps.googleusercontent.com",
+          "client_id": "319127397052-8sv9v8gpq54dmgvblpi4q2kslcp3fe7f.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBt7ljMudHD7BfHE938z2C8-tt-808GyYs"
+          "current_key": "AIzaSyDvm26ZE0HJaQDbvyrVEWKdzJ8oTE59mUU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "534568157204-q7a03ofp5p6m5gkjpu3630ruqrdm5le3.apps.googleusercontent.com",
+              "client_id": "319127397052-8sv9v8gpq54dmgvblpi4q2kslcp3fe7f.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

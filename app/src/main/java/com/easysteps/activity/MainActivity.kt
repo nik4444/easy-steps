@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.Resources
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
@@ -18,10 +19,9 @@ import com.easysteps.fragment.DailyStepHistoryFragment
 import com.easysteps.fragment.DealFragment
 import com.easysteps.fragment.HomeFragment
 import com.easysteps.fragment.SettingsFragment
-import com.easysteps.helper.PrefKey
 import com.easysteps.pref.SharedPref
+import com.easysteps.pref.SharedPref.accountFirstTime
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.pixplicity.easyprefs.library.Prefs
 import java.util.*
 
 /**
@@ -46,23 +46,27 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), 
         res.updateConfiguration(conf, dm)
     }
 
+
+
     private fun setOnClickListener() {
 
     }
 
     private fun initView() {
-        changeLanguage(SharedPref.language)
+        changeLanguage(SharedPref.selectedLang.lowercase())
         loadFragment(HomeFragment())
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACTIVITY_RECOGNITION)
             != PackageManager.PERMISSION_GRANTED
         ) {
             try {
-                ActivityCompat.requestPermissions(
-                    this,
-                    arrayOf(Manifest.permission.ACTIVITY_RECOGNITION, Manifest.permission.ACCESS_FINE_LOCATION),
-                    0
-                )
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                    ActivityCompat.requestPermissions(
+                        this,
+                        arrayOf(Manifest.permission.ACTIVITY_RECOGNITION, Manifest.permission.ACCESS_FINE_LOCATION),
+                        0
+                    )
+                }
             } catch (e: Exception) {
             }
         }
@@ -139,10 +143,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == RESULT_OK) {
-            if (requestCode == GOOGLE_FIT_PERMISSION_REQUEST_CODE) {
-                Prefs.putBoolean(PrefKey.account_first_time, true)
-                Handler().postDelayed({ loadFragment(HomeFragment()) }, 1500)
-            }
+            accountFirstTime = true
+            Handler().postDelayed({ loadFragment(HomeFragment()) }, 1500)
+
         } else {
             Toast.makeText(this, "Permission Denied!", Toast.LENGTH_SHORT).show()
         }

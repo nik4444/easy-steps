@@ -47,7 +47,7 @@ class ReginLanguageFragment : BaseFragment<FragmentReginLanguageBinding>(R.layou
         viewModel.dataError.observe(requireActivity()) { it.printStackTrace() }
 
         viewModel.regionLanguageData.observe(requireActivity()) {
-            changeLanguage(selectedLang)
+            changeLanguage()
         }
     }
 
@@ -122,8 +122,8 @@ class ReginLanguageFragment : BaseFragment<FragmentReginLanguageBinding>(R.layou
         languageDialog.show()
     }
 
-    private fun changeLanguage(language: String) {
-        (requireActivity() as MainActivity).setNewLocale(language)
+    private fun changeLanguage() {
+        (requireContext() as MainActivity).setNewLocale()
     }
 
     private fun updateRegionLang() {

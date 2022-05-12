@@ -1,7 +1,6 @@
 package com.easysteps.fragment
 
 
-import android.animation.ObjectAnimator
 import android.app.Dialog
 import android.graphics.Color
 import android.graphics.PorterDuff
@@ -19,7 +18,6 @@ import androidx.fragment.app.viewModels
 import com.easysteps.R
 import com.easysteps.base.BaseFragment
 import com.easysteps.databinding.FragmentHomeBinding
-import com.easysteps.helper.PrefKey
 import com.easysteps.helper.Utils
 import com.easysteps.pref.SharedPref
 import com.easysteps.pref.SharedPref.condition_end_steps
@@ -38,7 +36,6 @@ import com.google.android.gms.fitness.Fitness
 import com.google.android.gms.fitness.FitnessOptions
 import com.google.android.gms.fitness.data.DataType
 import com.google.android.gms.fitness.data.Field
-import com.pixplicity.easyprefs.library.Prefs
 import timber.log.Timber
 import java.text.SimpleDateFormat
 import java.util.*
@@ -53,16 +50,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
 
     var stepCoins = 0
     var todaystepCoins = 0
-    var earnedCoins = 0
     var conditionStartSteps = 0.0
     var conditionEndSteps = 0.0
     var UserCoins = 0
-    var RewardedID = 0
+    var rewardedID = 0
     var is_performed = 0
     var RewardedCoins = 0
     var account_first_time = false
     var listRewardData: List<RewardData>? = null
-    var targetGoal = 0f
     var added_or_not = 0
     var lastSteps: Long = 0
     var cntCurr = 0
@@ -79,23 +74,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
     private val textCoins: TextView? = null
 
     private var steps: Long = 0
-    private val slideUp: Animation? = null
-    private val currentDate: String? = null
-    private val currentSteps = 0
-    private val DailySteps = 0
-    private val animationSteps = 0
-    private val isBind = false
-    private val textViewDistance: TextView? = null
-    private val textViewStepsCount: TextView? = null
-    private val zoom_in: Animation? = null
-    private val anim_daily_reward: ObjectAnimator? = null
-    private val anim_invite_friends: ObjectAnimator? = null
-    private val anim_bonus_1: ObjectAnimator? = null
-    private val anim_bonus_2: ObjectAnimator? = null
     private var ll_google_sign_in: LinearLayout? = null
-    private val anim_bonus_3: ObjectAnimator? = null
-    private val anim_bonus_5: ObjectAnimator? = null
-    private val anim_bonus_4: ObjectAnimator? = null
+
     private var todayDate: String? = null
     private var getDate: String? = null
     private var clickedBtnPos = 0
@@ -104,7 +84,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
 
     private var fitnessOptions: FitnessOptions? = null
     private val GOOGLE_FIT_PERMISSION_REQUEST_CODE = 1
-    private val myLiveSteps = 0
     private val steps_today: Long = 0
     private var newSteps: Long = 0
 
@@ -149,11 +128,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
                         Timber.e("onSuccess newSteps: $newSteps")
                         if (newSteps >= 1000) {
                             lastSteps = steps
-                            Prefs.putLong(PrefKey.last_steps, lastSteps)
+                            last_steps = lastSteps.toInt()
                             getMyDailyStep()
                         } else if (cntCurr > cntLast) {
                             lastSteps = steps
-                            Prefs.putLong(PrefKey.last_steps, lastSteps)
+                            last_steps = lastSteps.toInt()
                             getMyDailyStep()
                         }
                     }
@@ -196,6 +175,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
             if (it.status == 1) {
                 it.data.run {
                     stepCoins = this?.userCoins!!
+
+                    SharedPref.userCoins = this.userCoins
+
                     todaystepCoins = this.todayUserCoins
                     listRewardData = this.RewardedData
                     added_or_not = it.addedornot
@@ -351,7 +333,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
             10000.0f
         }
         binding.gauge.endValue = 100
-        steps = Prefs.getLong(PrefKey.current_steps, 0)
+        steps = current_steps.toLong()
         binding.gauge.value = (steps.toFloat() / f * 100.0f).roundToInt()
         binding.gauge.invalidate()
     }
@@ -372,7 +354,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
                 steps =
                     if (dataSet.isEmpty) 0 else dataSet.dataPoints[0].getValue(Field.FIELD_STEPS)
                         .asInt().toLong()
-                Prefs.putLong(PrefKey.current_steps, steps)
+                current_steps = steps.toInt()
                 checkAnimation()
                 val f: Float
                 val str = f1327sp
@@ -383,7 +365,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
                 }
                 binding.gauge.endValue = 100
                 if (steps <= 20000) {
-                    lastSteps = Prefs.getLong(PrefKey.last_steps, 0)
+                    lastSteps = last_steps.toLong()
                     binding.gauge.value = (steps.toFloat() / f * 100.0f).roundToInt()
                     if (steps >= 1000) {
                         Timber.e("onSuccess: steps$steps")
@@ -482,7 +464,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
             R.id.llDailyReward -> {
                 is_performed = listRewardData!![0].isPerformed
                 if (is_performed == 0) {
-                    RewardedID = listRewardData!![0].rewardedId
+                    rewardedID = listRewardData!![0].rewardedId
                     RewardedCoins = listRewardData!![0].coins
                     addToAcceptReward(
                         binding.llDailyReward,
@@ -499,7 +481,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
             }
             R.id.llInviteFriends -> {
                 if (added_or_not == 0) {
-                    RewardedID = listRewardData!![1].rewardedId
+                    rewardedID = listRewardData!![1].rewardedId
                     RewardedCoins = listRewardData!![1].coins
                     added_or_not = 1
                     addToAcceptReward(
@@ -518,7 +500,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
                 if (steps >= 1000) {
                     is_performed = listRewardData!![2].isPerformed
                     if (is_performed == 0) {
-                        RewardedID = listRewardData!![2].rewardedId
+                        rewardedID = listRewardData!![2].rewardedId
                         RewardedCoins = listRewardData!![2].coins
                         addToAcceptReward(
                             binding.llBonus1,
@@ -539,7 +521,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
                 if (steps >= 3000) {
                     is_performed = listRewardData!![3].isPerformed
                     if (is_performed == 0) {
-                        RewardedID = listRewardData!![3].rewardedId
+                        rewardedID = listRewardData!![3].rewardedId
                         RewardedCoins = listRewardData!![3].coins
                         addToAcceptReward(
                             binding.llBonus2,
@@ -560,7 +542,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
                 if (steps >= 9000) {
                     is_performed = listRewardData!![4].isPerformed
                     if (is_performed == 0) {
-                        RewardedID = listRewardData!![4].rewardedId
+                        rewardedID = listRewardData!![4].rewardedId
                         RewardedCoins = listRewardData!![4].coins
                         addToAcceptReward(
                             binding.llBonus3,
@@ -581,7 +563,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
                 if (steps >= 14000) {
                     is_performed = listRewardData!![5].isPerformed
                     if (is_performed == 0) {
-                        RewardedID = listRewardData!![5].rewardedId
+                        rewardedID = listRewardData!![5].rewardedId
                         RewardedCoins = listRewardData!![5].coins
                         addToAcceptReward(
                             binding.llBonus4,
@@ -602,7 +584,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
                 if (steps >= 20000) {
                     is_performed = listRewardData!![6].isPerformed
                     if (is_performed == 0) {
-                        RewardedID = listRewardData!![6].rewardedId
+                        rewardedID = listRewardData!![6].rewardedId
                         RewardedCoins = listRewardData!![6].coins
                         addToAcceptReward(
                             binding.llBonus5,
@@ -640,10 +622,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
         this.text_coins = text_coins
 
         val map = HashMap<String, Any>()
-        map[RequestParamsUtils.RewardedId] = RewardedID.toString()
+        map[RequestParamsUtils.RewardedId] = rewardedID.toString()
         map[RequestParamsUtils.RewardedCoins] = RewardedCoins
         viewModel.addToAcceptReward(map)
-
     }
 
     fun createSpaceString(originalString: String, stringToBeInserted: String?, index: Int): String? {

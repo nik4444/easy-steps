@@ -7,20 +7,18 @@ import android.content.res.Configuration
 import android.os.Build
 import android.os.Process
 import android.webkit.WebView
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.ProcessLifecycleOwner
 import com.chibatching.kotpref.Kotpref
 import com.chibatching.kotpref.gsonpref.gson
-import com.easysteps.helper.PrefKey
 import com.easysteps.multilanguage.LocaleManager
-import com.google.android.gms.tasks.Task
-import com.google.firebase.messaging.FirebaseMessaging
 import com.google.gson.Gson
-import com.pixplicity.easyprefs.library.Prefs
 
 /**
  * Created by NIKUNJ on 02-05-2022.
  */
 
-class MyApplication : Application() {
+class MyApplication : Application(), LifecycleObserver {
 
     private val PROCESS = "com.easysteps"
 
@@ -35,27 +33,12 @@ class MyApplication : Application() {
         super.onCreate()
         mInstance = this
 
+        ProcessLifecycleOwner.get().lifecycle.addObserver(this)
+
         Kotpref.init(this)
         Kotpref.gson = Gson()
 
-        Prefs.Builder()
-            .setContext(this)
-            .setMode(MODE_PRIVATE)
-            .setPrefsName(this.packageName)
-            .setUseDefaultSharedPreference(true)
-            .build()
         initPieWebView()
-        FirebaseMessaging.getInstance().token
-            .addOnCompleteListener { task: Task<String?> ->
-                if (!task.isSuccessful) {
-                    return@addOnCompleteListener
-                }
-
-                // Get new FCM registration token
-                val token = task.result
-                Prefs.putString(PrefKey.token, token)
-                PrefKey.token = token
-            }
     }
 
     private fun initPieWebView() {

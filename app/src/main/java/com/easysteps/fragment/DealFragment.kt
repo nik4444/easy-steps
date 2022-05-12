@@ -12,6 +12,8 @@ import com.easysteps.adapter.DealsAdapter
 import com.easysteps.base.BaseFragment
 import com.easysteps.databinding.FragmentDealBinding
 import com.easysteps.pref.SharedPref.language
+import com.easysteps.pref.SharedPref.todayDate
+import com.easysteps.pref.SharedPref.userCoins
 import com.easysteps.viewModel.GetDealsViewModel
 import java.text.SimpleDateFormat
 import java.util.*
@@ -34,7 +36,8 @@ class DealFragment : BaseFragment<FragmentDealBinding>(R.layout.fragment_deal), 
     }
 
     private fun setOnClickListener() {
-
+        binding.txtCoins.text = userCoins.toString()
+        binding.txtTodayDate.text = todayDate.toString()
     }
 
     private fun setUpObserver() {

@@ -10,11 +10,13 @@ import com.easysteps.helper.Utils.HideProgressDialog
 import com.easysteps.helper.Utils.ShowProgressDialog
 import com.easysteps.modelClases.ResponseCode
 import com.easysteps.multilanguage.LocaleManager
+import com.easysteps.pref.SharedPref.selectedLang
 import kotlinx.coroutines.channels.ReceiveChannel
 import org.json.JSONObject
 import retrofit2.HttpException
 import java.net.ConnectException
 import java.net.SocketTimeoutException
+
 
 abstract class BaseActivity<VB : ViewDataBinding>(private val layoutRes: Int) :
     AppCompatActivity() {
@@ -104,13 +106,14 @@ abstract class BaseActivity<VB : ViewDataBinding>(private val layoutRes: Int) :
         }
     }
 
-    fun setNewLocale(language: String) {
-        LocaleManager.setNewLocale(this, language)
+    fun setNewLocale() {
+        LocaleManager.setNewLocale(this, selectedLang)
         recreate()
     }
 
     override fun attachBaseContext(base: Context) {
         super.attachBaseContext(LocaleManager.setLocale(base))
     }
+
 }
 
