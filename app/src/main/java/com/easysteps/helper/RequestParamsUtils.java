@@ -50,29 +50,4 @@ public class RequestParamsUtils {
     public static final String ContactTo = "ContactTo";
     static final String AUTHORIZATION = "Authorization";
     static final String ACCEPT = "Accept";
-
-    public static RequestBody newRequestBody(Context context, String json) {
-        MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-        RequestBody body = RequestBody.create(JSON, json);
-        return body;
-    }
-
-    public static FormBody.Builder newRequestFormBody(Context c) {
-        FormBody.Builder builder = new FormBody.Builder();
-
-        return builder;
-    }
-
-    public static MultipartBody.Builder newRequestMultipartBody(Context c) {
-        MultipartBody.Builder builder = new MultipartBody.Builder();
-
-        return builder;
-    }
-
-    public static HttpUrl.Builder newRequestUrlBuilder(Context c, String url) {
-        HttpUrl.Builder urlBuilder = HttpUrl.parse(url).newBuilder();
-
-        return urlBuilder;
-
-    }
 }
