@@ -183,5 +183,6 @@
     <string name="newPassword">new password is empty</string>
     <string name="confirmPassword">confirm password is empty</string>
     <string name="passwordMatch">password did not match </string>
+    <string name="_0">0</string>
 
 </resources>

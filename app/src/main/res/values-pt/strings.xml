@@ -171,4 +171,5 @@
     <string name="text_resend_otp">Reenviar Código</string>
     <string name="text_remember_me">Memorizar minhas informações</string>
     <string name="text_face">Ativar ID de rosto/ID de toque</string>
+    <string name="_0">0</string>
 </resources>

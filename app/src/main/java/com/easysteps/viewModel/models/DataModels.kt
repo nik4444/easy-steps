@@ -29,6 +29,7 @@ data class SignupData(
     var userCountry: String? = null,
     var emailVerifiedAt: String? = null,
     var userState: String? = null,
+    var userRegion: String? = null,
     var mOtp: Int? = null,
     var userPhone: String? = null,
     var userOtp: Int? = null,
@@ -46,17 +47,17 @@ data class SignupData(
 )
 
 data class StepData(
-    val stepsCount: Int,
-    val userCoins: String,
-    val todayUserCoins: String,
-    val stepsKm: Double,
+    val StepsCount: Int,
+    val UserCoins: Int,
+    val TodayUserCoins: Int,
+    val StepsKm: Double,
 )
 
 data class GetDailyStepData(
-    val stepsCount: Int,
-    val userCoins: Int,
-    val todayUserCoins: Int,
-    val stepsKm: Double,
+    val StepsCount: Int,
+    val UserCoins: Int,
+    val TodayUserCoins: Int,
+    val StepsKm: Double,
     val RewardedData: List<RewardData>
 )
 
@@ -79,16 +80,16 @@ data class ProfileUpdate(
 )
 
 data class RewardData(
-    val rewardedId: Int,
-    val order: Int,
-    val coins: Int,
-    var isPerformed: Int,
-    val title: String,
+    val RewardedId: Int,
+    val Order: Int,
+    val Coins: Int,
+    var is_performed: Int,
+    val Title: String,
     val createdAt: String,
 )
 
 data class GetDealData(
-    var dealId: Int,
+    var DealId: Int,
     val DealTitle: String,
     val DealFileType: String,
     val DealPicture: String,

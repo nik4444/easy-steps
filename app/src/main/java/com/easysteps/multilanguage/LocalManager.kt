@@ -11,7 +11,7 @@ object LocaleManager {
 
     //Add your const language to support in app here
     const val ENGLISH = "en"
-    const val HINDI ="hi"
+    const val HINDI = "hi"
 
     /**
      * SharedPreferences Key
@@ -75,6 +75,7 @@ object LocaleManager {
         val config = res.configuration
         return if (Build.VERSION.SDK_INT >= 24) config.locales[0] else config.locale
     }
+
     fun isEnglish(context: Context): Boolean {
         return getLanguagePref(context) == ENGLISH
     }

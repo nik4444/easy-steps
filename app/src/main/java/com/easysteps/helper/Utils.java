@@ -19,13 +19,8 @@ import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.easysteps.R;
-import com.easysteps.model.loginsignup.SignUpData;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.pixplicity.easyprefs.library.Prefs;
 
-import java.lang.reflect.Type;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -183,46 +178,5 @@ public class Utils {
         }
 
 
-    }
-
-    public static SignUpData getLoginDataData() {
-        String data = Prefs.getString(PrefKey.login_info, "");
-        Gson gson = new Gson();
-
-        Type type = new TypeToken<SignUpData>() {
-        }.getType();
-        return gson.fromJson(data, type);
-    }
-
-    public static boolean isLogin() {
-        return Prefs.getBoolean(PrefKey.is_login, false);
-    }
-
-    public static int getSteps() {
-        return Prefs.getInt(PrefKey.steps, 0);
-    }
-
-    public static Float getKM() {
-        return Prefs.getFloat(PrefKey.km, 0);
-    }
-
-    public static void setLoginStatus(boolean value) {
-        Prefs.putBoolean(PrefKey.is_login, value);
-    }
-
-    public static boolean getCoinAddedStatus() {
-        return Prefs.getBoolean(PrefKey.coins_added, false);
-    }
-
-    public static void setCoinAddedStatus(boolean value) {
-        Prefs.putBoolean(PrefKey.coins_added, value);
-    }
-
-    public static String getUserToken() {
-        return Prefs.getString(PrefKey.userToken, "");
-    }
-
-    public static void setUserToken(String token) {
-        Prefs.putString(PrefKey.userToken, token);
     }
 }

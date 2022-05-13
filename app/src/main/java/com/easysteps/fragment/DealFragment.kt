@@ -4,7 +4,6 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.easysteps.R
 import com.easysteps.activity.ExoPlayerActivity
@@ -37,7 +36,7 @@ class DealFragment : BaseFragment<FragmentDealBinding>(R.layout.fragment_deal), 
 
     private fun setOnClickListener() {
         binding.txtCoins.text = userCoins.toString()
-        binding.txtTodayDate.text = todayDate.toString()
+        binding.txtTodayDate.text = todayDate
     }
 
     private fun setUpObserver() {
@@ -51,7 +50,6 @@ class DealFragment : BaseFragment<FragmentDealBinding>(R.layout.fragment_deal), 
             if (it.status == 1) {
                 it.data?.let { it1 -> dealsAdapter?.addAll(it1) }
             }
-            Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
         }
     }
 

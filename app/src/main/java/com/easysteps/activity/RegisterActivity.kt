@@ -4,13 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
-import com.easysteps.LoginActivity
 import com.easysteps.R
 import com.easysteps.base.BaseActivity
 import com.easysteps.databinding.ActivityRegisterBinding
+import com.easysteps.helper.RequestParamsUtils
 import com.easysteps.helper.Utils
 import com.easysteps.pref.SharedPref
-import com.easysteps.retrofit.RequestParamsUtils
 import com.easysteps.viewModel.RegisterViewModel
 
 /**

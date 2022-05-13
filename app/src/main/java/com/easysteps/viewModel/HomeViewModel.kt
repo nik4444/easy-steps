@@ -38,7 +38,6 @@ class HomeViewModel : BaseViewModel() {
 
     fun updateDailySteps() {
         viewModelScope.launch {
-            displayLoader()
             processDataEvent(api1Repository.updateDailyStep(), onError = {
                 _updateError.postValue(it)
             }) {
@@ -49,7 +48,6 @@ class HomeViewModel : BaseViewModel() {
 
     fun getDailySteps() {
         viewModelScope.launch {
-            displayLoader()
             processDataEvent(api1Repository.getDailyStep(), onError = {
                 _getError.postValue(it)
             }) {
@@ -60,7 +58,6 @@ class HomeViewModel : BaseViewModel() {
 
     fun addDailySteps(map: HashMap<String, Any>) {
         viewModelScope.launch {
-            displayLoader()
             processDataEvent(api1Repository.addDailyStep(map), onError = {
                 _getAddDailyStepError.postValue(it)
             }) {
@@ -71,7 +68,6 @@ class HomeViewModel : BaseViewModel() {
 
     fun addToAcceptReward(map: HashMap<String, Any>) {
         viewModelScope.launch {
-            displayLoader()
             processDataEvent(api1Repository.addToAcceptReward(map), onError = {
                 _getAddToAcceptError.postValue(it)
             }) {

@@ -2,7 +2,6 @@ package com.easysteps.fragment
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.easysteps.R
 import com.easysteps.adapter.StepHistoryAdapter
@@ -37,7 +36,6 @@ class DailyStepHistoryFragment : BaseFragment<FragmentDailyStepHistoryBinding>(R
             if (it.status == 1) {
                 it.data?.let { it1 -> stepHistoryAdapter?.addAll(it1) }
             }
-            Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
         }
     }
 

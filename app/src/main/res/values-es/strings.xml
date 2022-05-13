@@ -142,4 +142,5 @@
     <string name="text_no_deal_found">No se han encontrado ofertas</string>
     <string name="text_remember_me">Remember me</string>
     <string name="text_face">Habilitar Face ID / Touch ID</string>
+    <string name="_0">0</string>
 </resources>

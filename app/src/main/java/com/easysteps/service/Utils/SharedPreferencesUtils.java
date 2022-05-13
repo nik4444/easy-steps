@@ -10,7 +10,7 @@ public class SharedPreferencesUtils {
     static String SET_UNIT_PREF = "unitPrefrence";
     static String DATE_PREF = "date_today";
     private String FILE_NAME = "share_date";
-    private String isFace = "face";
+    private final String isFace = "face";
     private Context context;
 
     public SharedPreferencesUtils(String str) {
@@ -40,7 +40,7 @@ public class SharedPreferencesUtils {
 
     public Object getParam(String str, Object obj) {
         String simpleName = obj.getClass().getSimpleName();
-        try{
+        try {
             SharedPreferences sharedPreferences = this.context.getSharedPreferences(this.FILE_NAME, 0);
             if ("String".equals(simpleName)) {
                 return sharedPreferences.getString(str, (String) obj);
@@ -57,8 +57,8 @@ public class SharedPreferencesUtils {
             if ("Long".equals(simpleName)) {
                 return Long.valueOf(sharedPreferences.getLong(str, ((Long) obj).longValue()));
             }
-        }catch (NullPointerException exception){
-            Log.e("TAG", "getParam: "+exception.toString() );
+        } catch (NullPointerException exception) {
+            Log.e("TAG", "getParam: " + exception);
         }
 
         return null;

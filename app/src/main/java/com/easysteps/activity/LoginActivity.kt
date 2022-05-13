@@ -1,4 +1,4 @@
-package com.easysteps
+package com.easysteps.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,20 +7,18 @@ import androidx.activity.viewModels
 import androidx.biometric.BiometricPrompt
 import androidx.biometric.BiometricPrompt.PromptInfo
 import androidx.core.content.ContextCompat
-import com.easysteps.activity.ForgotPasswordActivity
-import com.easysteps.activity.MainActivity
-import com.easysteps.activity.RegisterActivity
+import com.easysteps.R
 import com.easysteps.base.BaseActivity
 import com.easysteps.databinding.ActivityLoginBinding
-import com.easysteps.helper.PrefKey
+import com.easysteps.helper.RequestParamsUtils
+import com.easysteps.helper.RequestParamsUtils.userDeviceToken
 import com.easysteps.helper.Utils
 import com.easysteps.pref.SharedPref
 import com.easysteps.pref.SharedPref.isRemember
 import com.easysteps.pref.SharedPref.rememberEmail
 import com.easysteps.pref.SharedPref.rememberPassword
-import com.easysteps.retrofit.RequestParamsUtils
 import com.easysteps.viewModel.LoginViewModel
-import com.pixplicity.easyprefs.library.Prefs
+import com.easysteps.viewModel.models.ProfileUpdate
 import timber.log.Timber
 
 /**
@@ -50,7 +48,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
     private fun initView() {
         val executor = ContextCompat.getMainExecutor(this)
 
-        Timber.e(" onCreate: " + Prefs.getString(PrefKey.userToken, "test"))
 
         val biometricPrompt = BiometricPrompt(this@LoginActivity,
             executor, object : BiometricPrompt.AuthenticationCallback() {
@@ -96,9 +93,23 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
 
         viewModel.loginData.observe(this) {
             if (it.status == 1) {
-                SharedPref.signupData = it.data
-                SharedPref.isLogin = true
-                SharedPref.authToken = it.data?.userToken.toString()
+                it.data?.run {
+                    val profile =
+                        ProfileUpdate(
+                            userName = this.userName,
+                            userAddress = this.userAddress,
+                            userCity = this.userCity,
+                            userCountry = this.userCountry,
+                            userPostCode = this.userPostCode, userState = this.userState
+                        )
+
+                    SharedPref.updateProfile = profile
+                    SharedPref.signupData = it.data
+                    SharedPref.region = this.userRegion.toString()
+                    SharedPref.isLogin = true
+                    SharedPref.authToken = it.data.userToken.toString()
+
+                }
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
             } else Utils.MyShortSnackbar(binding.llLogin, "" + it.message)
@@ -157,7 +168,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
         map[RequestParamsUtils.userPassword] = binding.etPassword.text.toString().trim()
         map[RequestParamsUtils.userLatitude] = "21.132564"
         map[RequestParamsUtils.userLongitude] = "12.123456"
-        map[RequestParamsUtils.userDeviceToken] = Prefs.getString(PrefKey.token, "testToken")
+        map[userDeviceToken] = SharedPref.authToken
         map[RequestParamsUtils.userDevice] = "1"
         map[RequestParamsUtils.userDeviceId] = Utils.getDeviceId(this)
         viewModel.callApi(map)

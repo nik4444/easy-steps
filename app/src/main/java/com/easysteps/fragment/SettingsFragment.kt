@@ -12,13 +12,13 @@ import android.widget.CompoundButton
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.easysteps.LoginActivity
 import com.easysteps.R
+import com.easysteps.activity.LoginActivity
 import com.easysteps.base.BaseFragment
 import com.easysteps.databinding.FragmentSettingsBinding
+import com.easysteps.helper.RequestParamsUtils
 import com.easysteps.pref.SharedPref
 import com.easysteps.pref.SharedPref.isFaceLocked
-import com.easysteps.retrofit.RequestParamsUtils
 import com.easysteps.viewModel.SettingViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions

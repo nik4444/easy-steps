@@ -6,8 +6,8 @@ import androidx.fragment.app.viewModels
 import com.easysteps.R
 import com.easysteps.base.BaseFragment
 import com.easysteps.databinding.FragmentProfileBinding
+import com.easysteps.helper.RequestParamsUtils
 import com.easysteps.pref.SharedPref
-import com.easysteps.retrofit.RequestParamsUtils
 import com.easysteps.viewModel.UpdateProfileViewModel
 import com.vikktorn.picker.*
 import org.json.JSONException

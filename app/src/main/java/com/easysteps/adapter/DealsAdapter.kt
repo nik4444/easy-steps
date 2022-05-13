@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide
 import com.easysteps.R
 import com.easysteps.base.BaseAdapter
 import com.easysteps.databinding.RawDealBinding
-import com.easysteps.retrofit.URLs
+import com.easysteps.helper.IMAGE_URL
 import com.easysteps.viewModel.models.GetDealData
 
 class DealsAdapter : BaseAdapter<RawDealBinding, GetDealData>(R.layout.raw_deal) {
@@ -63,7 +63,7 @@ class DealsAdapter : BaseAdapter<RawDealBinding, GetDealData>(R.layout.raw_deal)
                 }
             }
 
-            Glide.with(mContext).load(URLs.IMAGE_URL + item.DealPicture).placeholder(R.drawable.ic_placeholder)
+            Glide.with(mContext).load(IMAGE_URL + item.DealPicture).placeholder(R.drawable.ic_placeholder)
                 .into(imgDeal)
         }
     }

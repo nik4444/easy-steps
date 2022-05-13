@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.easysteps.R;
-import com.easysteps.retrofit.URLs;
+import com.easysteps.helper.AppConstatntsKt;
 import com.google.android.exoplayer2.ExoPlaybackException;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.ExoPlayerFactory;
@@ -59,7 +59,7 @@ public class ExoPlayerActivity extends AppCompatActivity {
                 img_link.setVisibility(View.VISIBLE);
                 exoPlayerView.setVisibility(View.GONE);
             }
-            Glide.with(ExoPlayerActivity.this).load(URLs.IMAGE_URL + videoURL).into(img_link);
+            Glide.with(ExoPlayerActivity.this).load(AppConstatntsKt.IMAGE_URL + videoURL).into(img_link);
         } else {
             if (exoPlayerView.getVisibility() == View.GONE) {
                 exoPlayerView.setVisibility(View.VISIBLE);
@@ -148,7 +148,7 @@ public class ExoPlayerActivity extends AppCompatActivity {
                     }
                 });
             } catch (Exception e) {
-                Log.e("TAG", "Error : " + e.toString());
+                Log.e("TAG", "Error : " + e);
             }
         }
     }

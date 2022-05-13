@@ -50,14 +50,14 @@ public class UIHelper {
     }
 
     public static String getDistanceFromSteps(long i, Context context) {
-        try{
-        boolean booleanValue = ((Boolean) new SharedPreferencesUtils(context).getParam(SharedPreferencesUtils.DISTANCE_MEASURE_IM_KM_KEY, false)).booleanValue();
+        try {
+            boolean booleanValue = ((Boolean) new SharedPreferencesUtils(context).getParam(SharedPreferencesUtils.DISTANCE_MEASURE_IM_KM_KEY, false)).booleanValue();
             Log.e("Ch--)", "" + booleanValue);
             if (!((Boolean) new SharedPreferencesUtils(context).getParam(SharedPreferencesUtils.DISTANCE_MEASURE_IM_KM_KEY, false)).booleanValue()) {
                 return getMilesFromSteps(i, context);
             }
-        }catch (NullPointerException exception){
-            Log.e("TAG", "getDistanceFromSteps: "+exception.getMessage() );
+        } catch (NullPointerException exception) {
+            Log.e("TAG", "getDistanceFromSteps: " + exception.getMessage());
         }
 
         return getKMFromSteps(i, context);
@@ -68,7 +68,7 @@ public class UIHelper {
         double d = (double) i;
         Double.isNaN(d);
         Double.isNaN(d);
-        sb.append(String.format("%.1f", new Object[]{Double.valueOf(d * 7.6E-4d)}));
+        sb.append(String.format("%.1f", Double.valueOf(d * 7.6E-4d)));
         return sb.toString();
     }
 
@@ -77,7 +77,7 @@ public class UIHelper {
         double d = (double) i;
         Double.isNaN(d);
         Double.isNaN(d);
-        sb.append(String.format("%.1f", new Object[]{Double.valueOf(d * 4.712E-4d)}));
+        sb.append(String.format("%.1f", Double.valueOf(d * 4.712E-4d)));
         return sb.toString();
     }
 
@@ -85,6 +85,6 @@ public class UIHelper {
         double d = (double) i;
         Double.isNaN(d);
         Double.isNaN(d);
-        return String.format("%.2f", new Object[]{Double.valueOf(d * 0.111d)});
+        return String.format("%.2f", Double.valueOf(d * 0.111d));
     }
 }

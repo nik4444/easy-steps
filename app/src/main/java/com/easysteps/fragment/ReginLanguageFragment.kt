@@ -11,10 +11,10 @@ import com.easysteps.R
 import com.easysteps.activity.MainActivity
 import com.easysteps.base.BaseFragment
 import com.easysteps.databinding.FragmentReginLanguageBinding
+import com.easysteps.helper.RequestParamsUtils
 import com.easysteps.pref.SharedPref.language
 import com.easysteps.pref.SharedPref.region
 import com.easysteps.pref.SharedPref.selectedLang
-import com.easysteps.retrofit.RequestParamsUtils
 import com.easysteps.viewModel.RegionLanguageViewModel
 
 /**
@@ -47,7 +47,7 @@ class ReginLanguageFragment : BaseFragment<FragmentReginLanguageBinding>(R.layou
         viewModel.dataError.observe(requireActivity()) { it.printStackTrace() }
 
         viewModel.regionLanguageData.observe(requireActivity()) {
-            changeLanguage()
+            if (region != "" && binding.txtLanguage.text != "") changeLanguage()
         }
     }
 

@@ -47,7 +47,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), 
     }
 
 
-
     private fun setOnClickListener() {
 
     }

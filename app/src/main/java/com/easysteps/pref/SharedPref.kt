@@ -23,6 +23,7 @@ object SharedPref : KotprefModel() {
     var condition_end_steps by intPref(0)
     var current_steps by intPref(0)
     var userCoins by intPref(0)
+    var todayCoins by intPref(0)
     var last_steps by intPref(0)
 
     var todayDate by stringPref("")
